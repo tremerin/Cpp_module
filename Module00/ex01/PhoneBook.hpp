@@ -7,12 +7,16 @@
 class PhoneBook
 {
 private:
-    Contact _contact[8];
-    char    _option;
+	Contact     _contact[8];
+	std::string _input;
+	int         _memPos;
+	bool		_on;
+
+	void _contactPos(void);
 public:
-    PhoneBook();
-    ~PhoneBook();
-    void Menu();
+	PhoneBook(void);
+	~PhoneBook(void);
+	void menu(void);
 };
 
 #endif

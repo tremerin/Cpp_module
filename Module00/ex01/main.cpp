@@ -6,6 +6,6 @@
 int main(void)
 {
     PhoneBook phoneBook;
-    phoneBook.Menu();
+    phoneBook.menu();
     return (0);
 }
