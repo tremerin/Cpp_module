@@ -26,9 +26,15 @@ void PhoneBook::menu(void)
 		if (_input.compare("EXIT") == 0)
 			_on = false;
 		else if (_input.compare("ADD") == 0)
+		{
 			std::cout << "Added contact" << std::endl;
+			_addContact();
+		}
 		else if (_input.compare("SEARCH") == 0)
+		{
 			std::cout << "Searching contacts" << std::endl;
+			//_searchContact();
+		}
 		else
 			std::cout << "Invalid command: " << _input << std::endl;
 	}
@@ -39,4 +45,10 @@ void PhoneBook::_contactPos(void)
 	this->_memPos++;
 	if (this->_memPos > 7)
 		this->_memPos = 0;
+}
+
+void PhoneBook::_addContact(void)
+{
+	_contactPos();
+	_contact[_memPos].createContact();
 }

@@ -13,9 +13,12 @@ private:
     std::string _phoneNumber;
     std::string _darkestSecret;
 
+    std::string _fillField(std::string field);
 public:
     Contact();
     ~Contact();
+    void createContact();
+    void viewContact();
 };
 
 #endif

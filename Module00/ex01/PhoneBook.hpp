@@ -13,6 +13,9 @@ private:
 	bool		_on;
 
 	void _contactPos(void);
+	void _addContact(void);
+	void _searchContact(void);
+	
 public:
 	PhoneBook(void);
 	~PhoneBook(void);
