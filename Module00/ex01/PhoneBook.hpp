@@ -15,7 +15,8 @@ private:
 	void _contactPos(void);
 	void _addContact(void);
 	void _searchContact(void);
-	
+	void _indexContacts(void);
+
 public:
 	PhoneBook(void);
 	~PhoneBook(void);

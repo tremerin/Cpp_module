@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Contact.hpp"
 
 Contact::Contact(void)
@@ -23,17 +22,25 @@ void Contact::createContact(void)
 
 std::string Contact::_fillField(std::string field)
 {
-	std::string input;
-	std::cout << "Enter " << field << ": ";
-	std::cin >> input;
+	std::string input = "";
+	bool valid = false;
+	std::cout << "Enter " << field << ": " << std::endl;
+	while (valid == false)
+	{
+		std::getline(std::cin, input);
+		if (std::cin.good() && !input.empty())
+			valid = true;
+	}
 	return (input);
 }
 
-void Contact::viewContact(void)
+void Contact::viewContact(void) const
 {
-	std::cout << this->_firstName << std::endl;
-	std::cout << this->_lastName << std::endl;
-	std::cout << this->_nickname << std::endl;
-	std::cout << this->_phoneNumber << std::endl;
-	std::cout << this->_darkestSecret << std::endl;
+	std::cout << "Index: " << this->_index << std::endl;
+	std::cout << "First name: " << this->_firstName << std::endl;
+	std::cout << "Last name: " << this->_lastName << std::endl;
+	std::cout << "Nickname: " << this->_nickname << std::endl;
+	std::cout << "Phone number: " << this->_phoneNumber << std::endl;
+	std::cout << "Darkest secret: " << this->_darkestSecret << std::endl;
+	std::cout << std::endl;
 }

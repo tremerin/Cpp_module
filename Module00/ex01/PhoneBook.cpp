@@ -6,12 +6,22 @@ PhoneBook::PhoneBook(void)
 	//std::cout << "PhoneBook class created" << std::endl;
 	this->_memPos = 0;
 	this-> _on = true;
-	
+	_indexContacts();
 }
 
 PhoneBook::~PhoneBook(void)
 {
 	//std::cout << "PhoneBook class destroyed" << std::endl;
+}
+
+void PhoneBook::_indexContacts(void)
+{
+	int	i = 0;
+	while (i < 8)
+	{
+		this->_contact[i]._index = i + 1;
+		i++;
+	}
 }
 
 void PhoneBook::menu(void)

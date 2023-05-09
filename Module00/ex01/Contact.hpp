@@ -3,6 +3,7 @@
 # define CONTACT_HPP
 
 # include <iostream>
+# include <iomanip>
 
 class Contact
 {
@@ -15,10 +16,11 @@ private:
 
     std::string _fillField(std::string field);
 public:
+    int         _index;
     Contact();
     ~Contact();
     void createContact();
-    void viewContact();
+    void viewContact() const;
 };
 
 #endif
