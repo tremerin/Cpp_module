@@ -3,15 +3,14 @@
 
 PhoneBook::PhoneBook(void)
 {
-	//std::cout << "PhoneBook class created" << std::endl;
-	this->_memPos = 0;
+	this->_memPos = -1;
 	this-> _on = true;
+	this->_searchLen = 0;
 	_indexContacts();
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	//std::cout << "PhoneBook class destroyed" << std::endl;
 }
 
 void PhoneBook::_indexContacts(void)
@@ -36,15 +35,9 @@ void PhoneBook::menu(void)
 		if (_input.compare("EXIT") == 0)
 			_on = false;
 		else if (_input.compare("ADD") == 0)
-		{
-			std::cout << "Added contact" << std::endl;
 			_addContact();
-		}
 		else if (_input.compare("SEARCH") == 0)
-		{
-			std::cout << "Searching contacts" << std::endl;
-			//_searchContact();
-		}
+			_searchContact();
 		else
 			std::cout << "Invalid command: " << _input << std::endl;
 	}
@@ -60,5 +53,34 @@ void PhoneBook::_contactPos(void)
 void PhoneBook::_addContact(void)
 {
 	_contactPos();
+	if (_searchLen < 8)
+		_searchLen++;
 	_contact[_memPos].createContact();
+}
+
+void PhoneBook::_searchContact(void)
+{
+	int	i = 0;
+	std::cout << _searchLen << " contacts" << std::endl;
+	while (i < _searchLen)
+	{
+		_contact[i].listContact();
+		i++;
+	}
+	std::cout << "choose a contact" << std::endl;
+	std::string contact = "";
+	bool valid = false;
+	std::cin.clear();
+	while (valid == false)
+	{
+		std::getline(std::cin, contact);
+		if (contact.length() == 1 && contact[0] >= '1' && contact[0] <= '8')
+		{
+			valid = true;
+		}
+		else if (!contact.empty())
+			std::cout << "invalid index" << std::endl;
+	}
+	int select = contact[0] - '0';
+	_contact[select -1].viewContact();
 }

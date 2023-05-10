@@ -1,47 +1,33 @@
-NAME		= PhoneBook
-	
-CC			= c++
-FLAGS		= -Wall -Wextra -Werror
-RM			= rm -rf
+NAME	= Phonebook
+SRC		= main.cpp PhoneBook.cpp Contact.cpp
+OBJS	= $(SRC:.cpp=.o)
+INC		= -I ./PhoneBook.hpp -I ./Contact.hpp
+CC		= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
+RM		= rm -rf
 
-OBJDIR = .objFiles
+BOLD	= \033[1m
+RED		= \033[31;1m
+GREEN	= \033[32;1m
+YELLOW	= \033[33;1m
+CYAN	= \033[36;1m
+WHITE	= \033[37;1m
+RESET	= \033[0m
 
-FILES		= main Contact PhoneBook
+all : $(NAME)
 
-SRC			= $(FILES:=.cpp)
-OBJ			= $(addprefix $(OBJDIR)/, $(FILES:=.o))
-HEADER		= Contact.hpp PhoneBook.hpp
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && printf "$(GREEN)$(BOLD)Your $(NAME) is ready!\n$(RESET)"
 
-#Colors:
-GREEN		=	\e[92;5;118m
-YELLOW		=	\e[93;5;226m
-GRAY		=	\e[33;2;37m
-RESET		=	\e[0m
-CURSIVE		=	\e[33;3m
+%.o : %.cpp
+	@$(CC) $(CFLAGS) -o $@ -c $< && printf "$(WHITE)\rCompiling: $(CYAN)$(notdir $@)$(GREEN)\r\e[35C[OK]\n$(RESET)"
 
-#Debug 
-ifeq ($(DEBUG), 1)
-   OPTS = -g
-endif
+clean :
+	@$(RM) $(OBJS) && printf "$(YELLOW)All objects have been clean \n$(RESET)"
 
-.PHONY: all clean fclean re bonus norm
+fclean : clean
+	@$(RM) $(NAME) && printf "$(YELLOW)$(NAME) $(GREEN)has been clean \n$(RESET)"
 
-all: $(NAME)
+re : fclean all
 
-$(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ) $(OPTS) -o $(NAME)
-	@printf "$(_SUCCESS) $(GREEN)- Executable ready.\n$(RESET)"
-
-$(OBJDIR)/%.o: %.cpp $(HEADER)
-	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(OPTS) -c $< -o $@
-
-clean:
-	@$(RM) $(OBJDIR) $(OBJ)
-	@printf "$(YELLOW)    - Object files removed.$(RESET)\n"
-
-fclean: clean
-	@$(RM) $(NAME)
-	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
-
-re: fclean all
+.PHONY : all clean fclean re

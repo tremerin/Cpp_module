@@ -15,12 +15,15 @@ private:
     std::string _darkestSecret;
 
     std::string _fillField(std::string field);
+    std::string _cutString(std::string field);
+
 public:
     int         _index;
     Contact();
     ~Contact();
     void createContact();
     void viewContact() const;
+    void listContact();
 };
 
 #endif
