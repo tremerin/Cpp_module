@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 18:15:59 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/05/12 18:16:02 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "PhoneBook.hpp"
 
@@ -67,7 +79,7 @@ void PhoneBook::_searchContact(void)
 		_contact[i].listContact();
 		i++;
 	}
-	std::cout << "choose a contact" << std::endl;
+	std::cout << "choose a contact: " << std::flush;
 	std::string contact = "";
 	bool valid = false;
 	std::cin.clear();
@@ -79,7 +91,10 @@ void PhoneBook::_searchContact(void)
 			valid = true;
 		}
 		else if (!contact.empty())
+		{
 			std::cout << "invalid index" << std::endl;
+			std::cout << "choose a contact: " << std::flush;
+		}
 	}
 	int select = contact[0] - '0';
 	_contact[select -1].viewContact();

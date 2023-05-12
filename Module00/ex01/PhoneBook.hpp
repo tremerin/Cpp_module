@@ -1,4 +1,15 @@
-/* PhoneBook */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 18:17:28 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/05/12 18:17:48 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
@@ -8,9 +19,9 @@ class PhoneBook
 {
 private:
 	Contact     _contact[8];
-	std::string _input;		   
-	int         _memPos;       
-	bool		_on;           
+	std::string _input;
+	int         _memPos;
+	bool		_on;
 	int			_searchLen;
 
 	void _contactPos(void);

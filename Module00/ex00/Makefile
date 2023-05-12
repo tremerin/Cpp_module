@@ -1,6 +1,5 @@
 NAME 	= megaphone
 SRC		= megaphone.cpp
-#HEADER = *.hpp
 CC 		= g++
 FLAGS 	= -Wall -Wextra -Werror -std=c++98
 RM 		= rm -rf

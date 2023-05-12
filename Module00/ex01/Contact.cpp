@@ -1,13 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 18:00:48 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/05/12 18:00:51 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 Contact::Contact(void)
 {
-	//std::cout << "Contact class created" << std::endl;
 }
 
 Contact::~Contact(void)
 {
-	//std::cout << "Contact class destroyed" << std::endl;
 }
 
 void Contact::createContact(void)
@@ -42,7 +52,7 @@ void Contact::viewContact(void) const
 	std::cout << "Phone number: " 	<< this->_phoneNumber 	<< std::endl;
 	std::cout << "Darkest secret: " << this->_darkestSecret << std::endl;
 	std::cout << std::endl;
-}	
+}
 
 std::string Contact::_cutString(std::string field)
 {
