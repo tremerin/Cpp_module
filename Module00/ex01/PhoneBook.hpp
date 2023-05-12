@@ -8,9 +8,10 @@ class PhoneBook
 {
 private:
 	Contact     _contact[8];
-	std::string _input;
-	int         _memPos;
-	bool		_on;
+	std::string _input;		   
+	int         _memPos;       
+	bool		_on;           
+	int			_searchLen;
 
 	void _contactPos(void);
 	void _addContact(void);

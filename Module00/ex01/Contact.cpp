@@ -17,7 +17,6 @@ void Contact::createContact(void)
 	this->_nickname = this->_fillField("nickname");
 	this->_phoneNumber = this->_fillField("phoneNumber");
 	this->_darkestSecret = this->_fillField("darkestSecret");
-	this->viewContact();
 }
 
 std::string Contact::_fillField(std::string field)
@@ -36,11 +35,27 @@ std::string Contact::_fillField(std::string field)
 
 void Contact::viewContact(void) const
 {
-	std::cout << "Index: " << this->_index << std::endl;
-	std::cout << "First name: " << this->_firstName << std::endl;
-	std::cout << "Last name: " << this->_lastName << std::endl;
-	std::cout << "Nickname: " << this->_nickname << std::endl;
-	std::cout << "Phone number: " << this->_phoneNumber << std::endl;
+	std::cout << "Index: " 			<< this->_index 		<< std::endl;
+	std::cout << "First name: " 	<< this->_firstName 	<< std::endl;
+	std::cout << "Last name: " 		<< this->_lastName 		<< std::endl;
+	std::cout << "Nickname: " 		<< this->_nickname 		<< std::endl;
+	std::cout << "Phone number: " 	<< this->_phoneNumber 	<< std::endl;
 	std::cout << "Darkest secret: " << this->_darkestSecret << std::endl;
 	std::cout << std::endl;
+}	
+
+std::string Contact::_cutString(std::string field)
+{
+	if (field.length() > 10)
+		return (field.substr(0, 9) + ".");
+	else
+		return (field);
+}
+
+void Contact::listContact(void)
+{
+	std::cout << std::setw(10) << _index << "|";
+	std::cout << std::setw(10) << _cutString(this->_firstName) << "|";
+	std::cout << std::setw(10) << _cutString(this->_lastName) << "|";
+	std::cout << std::setw(10) << _cutString(this->_nickname) << std::endl;
 }
