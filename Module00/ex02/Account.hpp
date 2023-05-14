@@ -23,19 +23,19 @@ public:
 
 	typedef Account		t;
 
-	static int	getNbAccounts( void );
-	static int	getTotalAmount( void );
-	static int	getNbDeposits( void );
-	static int	getNbWithdrawals( void );
-	static void	displayAccountsInfos( void );
+	static int	getNbAccounts( void );        //cuentas
+	static int	getTotalAmount( void );       //importe
+	static int	getNbDeposits( void );        //depositos
+	static int	getNbWithdrawals( void );     //retiradas
+	static void	displayAccountsInfos( void ); //info general de todas
 
 	Account( int initial_deposit );
 	~Account( void );
 
-	void	makeDeposit( int deposit );
-	bool	makeWithdrawal( int withdrawal );
-	int		checkAmount( void ) const;
-	void	displayStatus( void ) const;
+	void	makeDeposit( int deposit );        //deposita en una cuenta
+	bool	makeWithdrawal( int withdrawal );  //retra de una cuenta
+	int		checkAmount( void ) const;         //retorna saldo de una cuenta 
+	void	displayStatus( void ) const;       //info de una cuenta
 
 
 private:
@@ -45,7 +45,7 @@ private:
 	static int	_totalNbDeposits;
 	static int	_totalNbWithdrawals;
 
-	static void	_displayTimestamp( void );
+	static void	_displayTimestamp( void ); //muestra la fecha, año, mes, dia, hora, min, seg
 
 	int				_accountIndex;
 	int				_amount;
