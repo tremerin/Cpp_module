@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
+# include <cstdlib>
 
 class Contact
 {
@@ -24,14 +25,15 @@ private:
     std::string _nickname;
     std::string _phoneNumber;
     std::string _darkestSecret;
+    int         _index;
 
     std::string _fillField(std::string field);
     std::string _cutString(std::string field);
 
 public:
-    int         _index;
     Contact();
     ~Contact();
+    void setIndex(int i);
     void createContact();
     void viewContact() const;
     void listContact();

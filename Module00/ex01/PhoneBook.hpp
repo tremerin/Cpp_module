@@ -23,6 +23,7 @@ private:
 	int         _memPos;
 	bool		_on;
 	int			_searchLen;
+	int			_numContacts;
 
 	void _contactPos(void);
 	void _addContact(void);

@@ -36,7 +36,9 @@ std::string Contact::_fillField(std::string field)
 	std::cout << "Enter " << field << ": " << std::endl;
 	while (valid == false)
 	{
-		std::getline(std::cin, input);
+		std::cout << std::flush;
+		if (!std::getline(std::cin, input))
+			exit(0);
 		if (std::cin.good() && !input.empty())
 			valid = true;
 	}
@@ -45,11 +47,11 @@ std::string Contact::_fillField(std::string field)
 
 void Contact::viewContact(void) const
 {
-	std::cout << "Index: " 			<< this->_index 		<< std::endl;
-	std::cout << "First name: " 	<< this->_firstName 	<< std::endl;
-	std::cout << "Last name: " 		<< this->_lastName 		<< std::endl;
-	std::cout << "Nickname: " 		<< this->_nickname 		<< std::endl;
-	std::cout << "Phone number: " 	<< this->_phoneNumber 	<< std::endl;
+	std::cout << "Index:          " << this->_index 		<< std::endl;
+	std::cout << "First name:     " << this->_firstName 	<< std::endl;
+	std::cout << "Last name:      " << this->_lastName 		<< std::endl;
+	std::cout << "Nickname:       " << this->_nickname 		<< std::endl;
+	std::cout << "Phone number:   " << this->_phoneNumber 	<< std::endl;
 	std::cout << "Darkest secret: " << this->_darkestSecret << std::endl;
 	std::cout << std::endl;
 }
@@ -68,4 +70,9 @@ void Contact::listContact(void)
 	std::cout << std::setw(10) << _cutString(this->_firstName) << "|";
 	std::cout << std::setw(10) << _cutString(this->_lastName) << "|";
 	std::cout << std::setw(10) << _cutString(this->_nickname) << std::endl;
+}
+
+void Contact::setIndex(int i)
+{
+	this->_index = i;
 }
