@@ -17,7 +17,7 @@ int main(void)
     ifs.close();
 
     std::ofstream   ofs("test.out");
-    ofs << "los cabrones de 42 no traducen los videos" << std::endl;
+    ofs << "los de 42 no traducen los videos" << std::endl;
     ofs << "123\n";
     ofs << "456" << std::endl;
     ofs.close();
