@@ -106,7 +106,7 @@ bool Account::makeWithdrawal(int withdrawal)
     	_totalAmount -= withdrawal;
     	_amount -= withdrawal;
     	std::cout << "amount:" << _amount << ";";
-    	std::cout << "nb_deposit:" << _nbDeposits << std::endl;
+    	std::cout << "nb_withdrawals:" << _nbWithdrawals << std::endl;
 	}
     return true;
 }
@@ -129,7 +129,7 @@ void Account::displayStatus(void) const
 void Account::_displayTimestamp()
 {
 	std::time_t timeNow;
-	
+
 	timeNow = std::time(NULL);
 	std::cout << std::setfill('0');
 	std::cout << "[" << 1900 + std::localtime(&timeNow)->tm_year;
@@ -138,6 +138,6 @@ void Account::_displayTimestamp()
 	std::cout << "_";
 	std::cout << std::setw(2) << std::localtime(&timeNow)->tm_hour;
 	std::cout << std::setw(2) << std::localtime(&timeNow)->tm_min;
-	std::cout << std::setw(2) << std::localtime(&timeNow)->tm_sec; 
+	std::cout << std::setw(2) << std::localtime(&timeNow)->tm_sec;
 	std::cout << "] ";
 }

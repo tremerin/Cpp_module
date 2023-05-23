@@ -1,24 +1,33 @@
-NAME 	= megaphone
+NAME	= megaphone
 SRC		= megaphone.cpp
-CC 		= g++
-FLAGS 	= -Wall -Wextra -Werror -std=c++98
-RM 		= rm -rf
-OBJ		= $(SRC:.cpp=.o)
+OBJS	= $(SRC:.cpp=.o)
+INC		= -I ./PhoneBook.hpp -I ./Contact.hpp
+CC		= c++
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
+RM		= rm -rf
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+BOLD	= \033[1m
+RED		= \033[31;1m
+GREEN	= \033[32;1m
+YELLOW	= \033[33;1m
+CYAN	= \033[36;1m
+WHITE	= \033[37;1m
+RESET	= \033[0m
 
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+all : $(NAME)
 
-all: $(NAME)
+$(NAME): $(OBJS)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) && printf "$(GREEN)$(BOLD)Your $(NAME) is ready!\n$(RESET)"
 
-clean:
-	$(RM) $(OBJ)
+%.o : %.cpp
+	@$(CC) $(CFLAGS) -o $@ -c $< && printf "$(WHITE)\rCompiling: $(CYAN)$(notdir $@)$(GREEN)\r\e[35C[OK]\n$(RESET)"
 
-fclean:
-	$(RM) $(OBJ) $(NAME)
+clean :
+	@$(RM) $(OBJS) && printf "$(YELLOW)All objects have been clean \n$(RESET)"
 
-re: fclean all
+fclean : clean
+	@$(RM) $(NAME) && printf "$(YELLOW)$(NAME) $(GREEN)has been clean \n$(RESET)"
+
+re : fclean all
 
 .PHONY : all clean fclean re
