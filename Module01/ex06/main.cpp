@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 19:00:26 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/02 19:00:30 by fgalan-r         ###   ########.fr       */
+/*   Created: 2023/06/02 18:59:58 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/02 19:00:01 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Harl.hpp"
 
-#ifndef HARL_HPP
-# define HARL_HPP
-
-# include <iostream>
-
-class Harl
+int main(void)
 {
-private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
 
-public:
-	Harl();
-	~Harl();
-
-	void complain(std::string level);
-};
-
-#endif
+	return (0);
+}

@@ -1,7 +1,7 @@
-NAME	= replace
-SRC		= main.cpp Replace.cpp
+NAME	= harl
+SRC		= main.cpp Harl.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./Replace.hpp
+INC		= -I ./Harl.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
