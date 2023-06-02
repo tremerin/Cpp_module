@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 19:41:15 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/02 19:41:17 by fgalan-r         ###   ########.fr       */
+/*   Created: 2023/06/02 19:00:26 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/02 19:00:30 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-Zombie::Zombie()
-{
-}
+#ifndef HARL_HPP
+# define HARL_HPP
 
-Zombie::~Zombie()
-{
-    std::cout << this->_name << " destroyed" << std::endl;
-}
+# include <iostream>
 
-void Zombie::announce(void)
+class Harl
 {
-    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+private:
 
-void Zombie::setName(std::string name)
-{
-    this->_name = name;
-}
+public:
+	Harl();
+	~Harl();
+};
+
+#endif
