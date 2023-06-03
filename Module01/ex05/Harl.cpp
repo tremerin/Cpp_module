@@ -22,10 +22,6 @@ Harl::~Harl()
 
 }
 
-void complain(std::string level)
-{
-
-}
 
 void Harl::_debug(void)
 {
@@ -42,4 +38,23 @@ void Harl::_warning(void)
 void Harl::_error(void)
 {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+}
+
+void Harl::complain(std::string level)
+{
+	t_func  	functions[] = { &Harl::_debug , &Harl::_info , &Harl::_warning , &Harl::_error };
+	std::string	options[] =   { "DEBUG" , "INFO" , "WARNING" , "ERROR"};
+	int 		option = 0;
+	while (option < 4)
+	{
+		if (!level.compare(options[option]))
+		{
+			(this->*functions[option])();
+			break ;
+		}
+		option++;
+	}
+	if (option == 4)
+		std::cout << "invalid option" << std::endl;
+
 }
