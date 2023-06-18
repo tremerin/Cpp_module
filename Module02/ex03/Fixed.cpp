@@ -2,28 +2,28 @@
 
 Fixed::Fixed(void) : _integer(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    //std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const & src)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    //std::cout << "Copy constructor called" << std::endl;
     *this = src;
 }
 
 Fixed::Fixed(const int n) : _integer(n << _bits)
 {
-    std::cout << "Int constructor called" << std::endl;
+    //std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float n) : _integer(std::roundf(n * (1 <<_bits)))
 {
-    std::cout << "Float constructor called" << std::endl;
+    //std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor called" << std::endl;
+    //std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
@@ -50,7 +50,7 @@ int Fixed::toInt(void) const
 /* Operators */
 Fixed & Fixed::operator=(const Fixed & rhs)
 {
-    std::cout << "Assignation operator called" << std::endl;
+    //std::cout << "Assignation operator called" << std::endl;
     this->_integer = rhs.getRawBits();
     return (*this);
 }

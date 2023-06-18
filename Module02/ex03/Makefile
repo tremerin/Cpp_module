@@ -1,5 +1,5 @@
-NAME	= fixed
-SRC		= main.cpp Fixed.cpp Point.cpp
+NAME	= Bsp
+SRC		= main.cpp Fixed.cpp Point.cpp Bsp.cpp
 OBJS	= $(SRC:.cpp=.o)
 INC		= -I ./Fixed.hpp ./Point.cpp
 CC		= c++

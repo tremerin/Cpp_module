@@ -3,7 +3,7 @@ SRC		= main.cpp Fixed.cpp
 OBJS	= $(SRC:.cpp=.o)
 INC		= -I ./Fixed.hpp 
 CC		= c++
-CFLAGS	= -Wall -Werror #-Wextra -std=c++98
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 BOLD	= \033[1m
