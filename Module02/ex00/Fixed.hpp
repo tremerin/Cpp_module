@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/19 17:31:31 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/19 17:32:45 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -13,11 +25,11 @@ private:
 public:
     Fixed();
     Fixed(Fixed const & src);
+    Fixed & operator=(Fixed const & rhs);
     ~Fixed();
+
     int getRawBits(void) const;
-    void setRawBits(int const raw); 
-    Fixed & operator=(Fixed const & rhs); //operador de asignacion
-    //Integer & operator=(Integer const & rhs); //rhs = right hand side
+    void setRawBits(int const raw);
 };
 
 #endif

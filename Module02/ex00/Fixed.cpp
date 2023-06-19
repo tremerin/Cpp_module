@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/19 17:31:04 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/19 17:31:17 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _integer(0)
@@ -34,14 +46,3 @@ Fixed & Fixed::operator=(const Fixed & rhs)
     this->_integer = rhs.getRawBits();
     return (*this);
 }
-
-/*
-Integer & Integer::operator=(const Integer &rhs) {
-	std::cout << "Assignment operator called from " << this->_n;
-	std::cout << " to " << rhs.getValue() << std::endl;
-
-	this->_n = rhs.getValue();
-
-	return *this;
-}
-*/

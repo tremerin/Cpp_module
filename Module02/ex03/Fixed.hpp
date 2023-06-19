@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/19 17:36:34 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/19 17:36:40 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
@@ -11,7 +23,7 @@ private:
 	int					_integer;
 	int static const	_bits = 8;
 
-public: 
+public:
 	Fixed(void);
 	Fixed(Fixed const & src);
 	Fixed & operator=(Fixed const & rhs);
@@ -20,15 +32,15 @@ public:
 	~Fixed();
 
 	int		getRawBits(void) const;
-	void	setRawBits(int const raw); 
+	void	setRawBits(int const raw);
 	float	toFloat(void) const;
 	int 	toInt(void) const;
- 
+
 	static 	Fixed& max(Fixed &a, Fixed &b);
 	static 	Fixed& min(Fixed &a, Fixed &b);
 	static 	const Fixed& max(const Fixed &a, const Fixed &b);
 	static 	const Fixed& min(const Fixed &a, const Fixed &b);
-	
+
 	bool    operator >	(Fixed const & rhs) const;
 	bool    operator <  (Fixed const & rhs) const;
 	bool    operator >= (Fixed const & rhs) const;

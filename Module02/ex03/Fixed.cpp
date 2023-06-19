@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/19 17:36:26 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/19 17:36:27 by fgalan-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(void) : _integer(0)
@@ -55,7 +67,7 @@ Fixed & Fixed::operator=(const Fixed & rhs)
     return (*this);
 }
 
-std::ostream & operator<<(std::ostream & o, Fixed const & i) 
+std::ostream & operator<<(std::ostream & o, Fixed const & i)
 {
     o << i.toFloat();
     return (o);
