@@ -1,7 +1,7 @@
-NAME	= megaphone
-SRC		= megaphone.cpp
+NAME	= ClapTrap
+SRC		= ClapTrap.cpp main.cpp SkapTrap.cpp FragTrap.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./PhoneBook.hpp -I ./Contact.hpp
+INC		= -I ./ClapTrap.hpp ./SkapTrap.hpp ./FragTrap.cpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
