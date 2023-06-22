@@ -13,8 +13,9 @@ public:
     SkapTrap(std::string name);
     ~SkapTrap();
 
-    void attack(const std::string& target);
+    void attack(const std::string & target);
     void guardGate(void);
+    
 };
 
 #endif
