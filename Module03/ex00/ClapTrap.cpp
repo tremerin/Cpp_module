@@ -113,8 +113,11 @@ void ClapTrap::beRepaired(unsigned int amount)
 
 void ClapTrap::info(void)
 {
-    std::cout << "Name: " << this->getName() << std::endl;
+    std::cout << "-------------INFO-----------------" << std::endl;
+    std::cout << "Name:          " << this->getName() << std::endl;
     std::cout << "Attack points: " << this->getAttackDamage() << std::endl;
-    std::cout << "Hit points: " << this->getHitPoints() << std::endl;
+    std::cout << "Hit points:    " << this->getHitPoints() << std::endl;
     std::cout << "Energy points: " << this->getEnergyPoints() << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+
 }

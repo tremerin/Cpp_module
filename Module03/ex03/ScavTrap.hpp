@@ -1,17 +1,17 @@
-#ifndef SKAPTRAP_H
-# define SKAPTRAP_H
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
 
 # include "ClapTrap.hpp"
 # include <iostream>
 
-class SkapTrap : public ClapTrap    
+class ScavTrap : virtual public ClapTrap    
 {
 private:
-    SkapTrap();
+    ScavTrap();
 
 public:
-    SkapTrap(std::string name);
-    ~SkapTrap();
+    ScavTrap(std::string name);
+    ~ScavTrap();
 
     void attack(const std::string& target);
     void guardGate(void);

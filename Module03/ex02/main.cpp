@@ -1,23 +1,21 @@
 #include "ClapTrap.hpp"
-#include "SkapTrap.hpp"
+#include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
 int main(void)
 {
     FragTrap clap1("Frag1");
-    SkapTrap clap2("Skap1");
     clap1.info();
-    clap2.info();
-
-    clap1.attack("pepe");
-    clap2.attack("pepe");
-    clap1.attack("pepe");
-    clap2.attack("pepe");
+    clap1.attack("objetive");
+    clap1.attack("objetive");
+    clap1.beRepaired(3);
+    clap1.info();
+    clap1.setEnergyPoints(0);
+    clap1.attack("objetive");
     clap1.takeDamage(2);
     clap1.beRepaired(3);
-    clap1.highFivesGuys();
-
     clap1.info();
+    clap1.highFivesGuys();
   
     return (0);
 }

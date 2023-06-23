@@ -2,17 +2,15 @@
 
 int main(void)
 {
-    ClapTrap clapVoid;
     ClapTrap clap1("ct1");
-    ClapTrap clap2("ct2");
-    clap1.attack("pepe");
-    clap1.attack("pepe");
-    clap1.attack("pepe");
-    clap1.attack("pepe");
+    clap1.info();
+    clap1.attack("objetive");
+    clap1.attack("objetive");
+    clap1.info();
+    clap1.setEnergyPoints(0);
+    clap1.attack("objetive");
     clap1.takeDamage(2);
     clap1.beRepaired(3);
-    clap2.attack("ose");
-    ClapTrap clap3(clap1);
-    clap3.attack("jesuu");
+    clap1.info();
     return (0);
 }

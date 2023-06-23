@@ -1,7 +1,7 @@
-NAME	= ClapTrap
-SRC		= ClapTrap.cpp main.cpp SkapTrap.cpp FragTrap.cpp
+NAME	= FragTrap
+SRC		= ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./ClapTrap.hpp ./SkapTrap.hpp ./FragTrap.cpp
+INC		= -I ./ClapTrap.hpp ./ScavTrap.hpp ./FragTrap.cpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
