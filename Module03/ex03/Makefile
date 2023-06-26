@@ -3,7 +3,7 @@ SRC		= ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 OBJS	= $(SRC:.cpp=.o)
 INC		= -I ./ClapTrap.hpp ./ScavTrap.hpp ./FragTrap.cpp ./DiamondTrap.hpp
 CC		= c++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 -Wshadow
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 BOLD	= \033[1m
