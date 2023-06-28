@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/28 00:24:22 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/28 20:39:17 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 class Cat : public Animal
 {
 private:
-    Brain *_Brain;
+    Brain *_brain;
 
 public:
     Cat();
+    Cat(const Cat & src);
+    Cat & operator=(const Cat & src);
     ~Cat();
 
     void makeSound(void) const;
