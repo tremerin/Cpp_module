@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:49 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/26 19:44:49 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/28 00:04:12 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,12 @@ private:
     std::string _ideas[100];
 public:
     Brain(void);
-    Brain(std::string ideas);
     Brain(const Brain & src);
     Brain & operator=(const Brain & src);
     ~Brain();
+
+    void setIdea(const int i, const std::string idea);
+    const std::string getIdea(const int i);
 };
 
 

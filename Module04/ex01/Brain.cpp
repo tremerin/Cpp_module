@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:45 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/26 19:44:46 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/28 00:08:22 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 Brain::Brain(void)
 {
     std::cout << "Brain constructor called" << std::endl;
+    for (size_t i = 0; i < 100; i++)
+    {
+        this->_ideas[i] = "...";
+    }
 }
 
 Brain::Brain(const Brain & src)
@@ -38,4 +42,15 @@ Brain & Brain::operator=(const Brain & src)
 Brain::~Brain()
 {
     std::cout << "Brain destructor called" << std::endl;
+    std::cout << _ideas[0] << std::endl;
+}
+
+void Brain::setIdea(const int i, const std::string idea)
+{
+    this->_ideas[i] = idea;
+}
+
+const std::string Brain::getIdea(const int i)
+{
+    return (this->_ideas[i]);
 }

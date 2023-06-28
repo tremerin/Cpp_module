@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fgalan-r <fgalan-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/26 19:45:01 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/28 00:24:22 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
     ~Cat();
 
     void makeSound(void) const;
+    void newIdea(const unsigned int i, const std::string idea);
+    void printfIdea(const unsigned int i);
 };
 
 #endif
