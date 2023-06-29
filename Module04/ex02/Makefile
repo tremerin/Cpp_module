@@ -1,7 +1,7 @@
-NAME	= Animal
-SRC		= Animal.cpp Cat.cpp Dog.cpp main.cpp WorngAnimal.cpp WorngCat.cpp Brain.cpp
+NAME	= AAnimal
+SRC		= AAnimal.cpp Cat.cpp Dog.cpp main.cpp WorngAnimal.cpp WorngCat.cpp Brain.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./Animal.hpp ./Cat.hpp ./Dog.hpp ./WorngAnimal.hpp ./WorngCat.hpp ./Brain.hpp
+INC		= -I ./AAnimal.hpp ./Cat.hpp ./Dog.hpp ./WorngAnimal.hpp ./WorngCat.hpp ./Brain.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf

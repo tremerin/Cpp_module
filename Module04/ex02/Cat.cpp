@@ -6,13 +6,13 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:53 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/28 20:48:15 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/29 20:46:08 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
     std::cout << _type << " constructor called" << std::endl;
     this->_brain = new Brain();

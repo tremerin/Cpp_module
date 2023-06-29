@@ -6,13 +6,13 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:45:13 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/28 21:55:38 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/29 20:46:08 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
     std::cout << _type << " constructor called" << std::endl;
     this->_brain = new Brain();
