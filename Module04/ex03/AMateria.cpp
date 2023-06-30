@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 13:32:34 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 18:54:55 by fgalan-r         ###   ########.fr       */
+/*   Created: 2023/06/30 17:49:40 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/30 18:41:06 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#include "AMateria.hpp"
 
-# include <iostream>
-# include "ICharacter.hpp"
-
-class ICharacter; //no entiendo
-
-class AMateria
+AMateria::AMateria(void) : _type("no type")
 {
-protected:
-	std::string	_type;
+    std::cout << "AMateria " << _type << " constructor called" << std::endl;
+}
 
-public:
-	AMateria(void);
-	AMateria(std::string const & type);
-	virtual ~AMateria();
+AMateria::AMateria(std::string const & type) : _type(type)
+{
+    std::cout << "AMateria " << _type << " constructor called" << std::endl;
+}
 
-	std::string const & getType() const; //Returns the materia type
-	virtual AMateria *clone() const = 0;
-	virtual void use(ICharacter& target);
-	
-};
+AMateria::~AMateria()
+{
+    std::cout << "AMateria " << _type << " constructor called" << std::endl;
+}
 
-#endif
