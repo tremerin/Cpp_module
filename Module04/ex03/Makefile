@@ -1,7 +1,7 @@
-NAME	= Animal
-SRC		= main.cpp AMateria.cpp Ice.cpp Cure.cpp
+NAME	= Materia
+SRC		= main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp MateriaSource.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./AMateria.hpp ./ICharacter.hpp ./IMateriaSource.hpp ./Ice.hpp ./Cure.hpp
+INC		= -I ./AMateria.hpp ./ICharacter.hpp ./IMateriaSource.hpp ./Ice.hpp ./Cure.hpp ./Character.hpp ./MateriaSource.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf

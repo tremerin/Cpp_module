@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 17:45:50 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 18:54:30 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:41:26 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Cure : public AMateria
 {
 public:
     Cure();
-    Cure( Cure const & );
-    Cure& operator=( Cure const & );
+    Cure(Cure const &);
+    Cure & operator=(Cure const &);
     ~Cure();
 
     virtual AMateria *clone() const;

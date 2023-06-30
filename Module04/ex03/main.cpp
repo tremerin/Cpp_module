@@ -6,20 +6,23 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:28:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 19:03:58 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/30 20:02:23 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "Character.hpp"
 #include "IMateriaSource.hpp"
+#include "MateriaSource.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include <iostream>
 
 int main(void)
 {
-	std::cout << "------- Subject test --------"
+	std::cout << "------- Subject test --------" << std::endl;
+
 	IMateriaSource *src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -35,7 +38,6 @@ int main(void)
 	delete bob;
 	delete me;
 	delete src;
-
 
 	return (0);
 }

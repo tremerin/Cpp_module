@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 18:58:18 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 19:03:33 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:35:25 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria    *materias[4];
+        AMateria    *_materias[4];
 
     public:
-        MateriaSource();
+        MateriaSource(void);
         MateriaSource(MateriaSource const & src);
         MateriaSource & operator=(MateriaSource const & src);
         ~MateriaSource();
 
-        AMateria    *getMateria( std::string const & type);
-        AMateria    *createMateria( std::string const & type ç);
-        void        learnMateria( AMateria *);
+        AMateria    *getMateria(std::string const & type);
+        AMateria    *createMateria(std::string const & type);
+        void        learnMateria(AMateria *);
         
 };
 

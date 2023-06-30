@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/30 14:27:51 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 20:06:01 by fgalan-r         ###   ########.fr       */
+/*   Created: 2023/06/30 19:21:58 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/06/30 19:35:22 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ICHARACTER_HPP
-# define ICHARACTER_HPP
+#include "MateriaSource.hpp"
 
-# include "AMateria.hpp"
-
-class ICharacter
+MateriaSource::MateriaSource(void)
 {
-public:
-	virtual ~ICharacter() {}
-	virtual std::string const & getName() const = 0;
-	virtual void equip(AMateria* m) = 0;
-	virtual void unequip(int idx) = 0;
-	virtual void use(int idx, ICharacter& target) = 0;
+    std::cout << "MateriaSource constructor called" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        this->_materias[i] = NULL;
+}
 
-};
-
-#endif
+MateriaSource::~MateriaSource()
+{
+    std::cout << "MateriaSource destructor called" << std::endl;
+    for (size_t i = 0; i < 4; i++)
+        if (_materias[i])
+            delete _materias[i];
+}

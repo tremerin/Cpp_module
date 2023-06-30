@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 17:40:41 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/30 17:42:27 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/06/30 19:40:53 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 
 class Ice : public AMateria
 {
-    
+public:
+    Ice();
+    Ice(Ice const & );
+    Ice & operator=(Ice const &);
+    ~Ice();
+
+    virtual AMateria *clone() const;
+    virtual void      use(ICharacter& target);
+ 
 };
 
 #endif
