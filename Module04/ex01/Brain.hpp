@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef BRAIN_HPP
-# define BRAIN_CPP
+# define BRAIN_HPP
 
 # include <iostream>
 
