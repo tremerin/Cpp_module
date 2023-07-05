@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/30 14:28:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/07/03 01:41:13 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/07/05 19:31:49 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 int main(void)
 {
 	{
-		std::cout << "------- Subject test --------" << std::endl;
+		std::cout << "---------// Subject test //----------" << std::endl;
 
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -40,9 +40,9 @@ int main(void)
 		delete me;
 		delete src;
 	}
-	
+
 	{
-		std::cout << "------- Test 2 --------" << std::endl;
+		std::cout << "---------// Test 2 //----------" << std::endl;
 
 		IMateriaSource *src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -50,7 +50,15 @@ int main(void)
 		src->learnMateria(new Ice());
 		src->learnMateria(new Cure());
 		src->learnMateria(new Cure());
-		std::cout << "----- src destructor call ------ " << std::endl;
+		std::cout << "---------// create materias //-------- " << std::endl;
+		AMateria *tmp;
+		tmp = src->createMateria("ice");
+		delete tmp;
+		tmp = src->createMateria("ice");
+		delete tmp;
+		tmp = src->createMateria("hielo");
+		delete tmp;
+		std::cout << "---------// src destructor //-------- " << std::endl;
 		delete src;
 
 	}

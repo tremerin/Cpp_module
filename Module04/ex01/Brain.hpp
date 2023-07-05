@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:49 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/28 00:04:12 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/07/05 19:06:51 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ public:
     void setIdea(const int i, const std::string idea);
     const std::string getIdea(const int i);
 };
-
 
 #endif
