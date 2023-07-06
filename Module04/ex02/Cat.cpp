@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 19:44:53 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/06/29 20:46:08 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/07/06 02:57:53 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Cat::Cat(const Cat & src)
 
 Cat & Cat::operator=(const Cat & src)
 {
-    std::cout << "Cat copy constructor called." << std::endl;
+    std::cout << "Cat copy constructor called" << std::endl;
     this->_type = src._type;
     this->_brain = new Brain(*src._brain);
     return *this;
