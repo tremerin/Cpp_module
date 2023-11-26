@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:49:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/24 05:35:41 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/26 03:11:15 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
-#include "Bureaucrat.hpp"
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 private:
     const std::string   _name;
     bool                _signed;
     const int           _gradeToSign;
     const int           _gradeToExecute;
-    Form();
+    AForm();
 
 public:
-    Form(const std::string & name, int gradeToSign);
-    Form(const std::string & name, int gradeToSign, int gradeToExecute);
-    Form(const Form & src);
-    ~Form();
+    AForm(const std::string & name, int gradeToSign);
+    AForm(const std::string & name, int gradeToSign, int gradeToExecute);
+    AForm(const AForm & src);
+    ~AForm();
 
-    Form &   operator=(const Form & rhs);
+    AForm &   operator=(const AForm & rhs);
 
     std::string getName() const;
     bool        getSigned() const;
@@ -53,6 +53,6 @@ public:
     };
 };
 
-std::ostream &  operator<<(std::ostream & o, const Form & rhs);
+std::ostream &  operator<<(std::ostream & o, const AForm & rhs);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:46:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/23 05:19:36 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/26 03:23:34 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(void)
     {
         Bureaucrat bureaucrat1("Burocrata 1",10);
         Bureaucrat bureaucrat2("Burocrata 2",21);
-        Form form1("Formulario 1", 20 , 5);
+        AForm form1("Formulario 1", 20 , 5);
 
         bureaucrat1.signForm(form1);
         bureaucrat2.signForm(form1);

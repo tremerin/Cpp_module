@@ -1,7 +1,7 @@
 NAME	= Bureaucrat
-SRC		= Bureaucrat.cpp main.cpp Form.cpp
+SRC		= Bureaucrat.cpp main.cpp AForm.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./Bureaucrat.hpp ./Form.cpp
+INC		= -I ./Bureaucrat.hpp ./AForm.cpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf

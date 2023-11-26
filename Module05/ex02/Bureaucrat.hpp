@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:27:08 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/23 05:12:08 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/26 03:28:31 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define BUREAUCRAT_HPP
 
 # include <iostream>
-# include "Form.hpp"
+# include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -41,7 +41,7 @@ public:
 	int			getGrade(void) const;
 	void		incrementGrade(void);
 	void		decrementGrade(void);
-	void        signForm(Form & form);
+	void        signForm(AForm & form);
 
 	//Exeception Classes
 	//heredan de la clase padre exception, implementamos la virtual funcion what()
@@ -58,6 +58,6 @@ public:
 	
 };
 //operador de insercion
-std::ostream &  operator<<( std::ostream & o, const Bureaucrat & rhs );
+std::ostream &  operator<<(std::ostream & o, const Bureaucrat & rhs);
 
 #endif

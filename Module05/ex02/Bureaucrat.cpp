@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:26:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/23 05:15:12 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/26 03:19:34 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,14 @@ int Bureaucrat::getGrade() const
     return _grade;
 }
 
-void    Bureaucrat::signForm(Form & form)
+void    Bureaucrat::signForm(AForm & form)
 {
     try 
     {
         form.beSigned(*this);
         std::cout << *this << " signed " << form.getName() << std::endl;
     } 
-    catch (Form::GradeTooLowException & e) 
+    catch (AForm::GradeTooLowException & e) 
     {
         std::cout << _name << " coulnd't sign " << form.getName() << " because " << e.what() << std::endl;
     }
