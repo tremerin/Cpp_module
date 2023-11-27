@@ -34,11 +34,12 @@ public:
 
     AForm &   operator=(const AForm & rhs);
 
-    std::string getName() const;
-    bool        getSigned() const;
-    int         getGradeToSign() const;
-    int         getGradeToExecute() const;
-    void        beSigned(const Bureaucrat & bureaucrat);
+    std::string     getName() const;
+    bool            getSigned() const;
+    int             getGradeToSign() const;
+    int             getGradeToExecute() const;
+    void            beSigned(const Bureaucrat & bureaucrat);
+    virtual void	execute(const Bureaucrat & executor) = 0;
 
     //Exception Classes
     class GradeTooHighException : public std::exception

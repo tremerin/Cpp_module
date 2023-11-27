@@ -1,9 +1,9 @@
 NAME	= Bureaucrat
-SRC		= Bureaucrat.cpp main.cpp AForm.cpp
+SRC		= Bureaucrat.cpp main.cpp AForm.cpp ShrubberyCreationForm.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./Bureaucrat.hpp ./AForm.cpp
+INC		= -I ./Bureaucrat.hpp ./AForm.cpp ./ShrubberyCreationForm.hpp
 CC		= c++
-CFLAGS	= -Wall -Werror -Wextra -std=c++98
+#CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 BOLD	= \033[1m

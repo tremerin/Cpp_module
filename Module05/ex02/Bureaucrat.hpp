@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:27:08 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/26 03:28:31 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/27 03:25:30 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ public:
 	//operador de asignacion, forma canonica
 	Bureaucrat & operator=(const Bureaucrat & rhs);
 
-	std::string getName(void) const;
-	int			getGrade(void) const;
-	void		incrementGrade(void);
-	void		decrementGrade(void);
-	void        signForm(AForm & form);
+	std::string 	getName(void) const;
+	int				getGrade(void) const;
+	void			incrementGrade(void);
+	void			decrementGrade(void);
+	void        	signForm(AForm & form);
 
 	//Exeception Classes
 	//heredan de la clase padre exception, implementamos la virtual funcion what()
