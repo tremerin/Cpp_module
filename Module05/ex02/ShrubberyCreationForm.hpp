@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 03:39:22 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/27 05:04:04 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 22:50:21 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 # include "AForm.hpp"
+# include <fstream>
 
 class AForm;
 
@@ -25,7 +26,7 @@ private:
 public:
     ShrubberyCreationForm(const std::string & target);
     ShrubberyCreationForm(const std::string & name, int gradeToSing);
-    ShrubberyCreationForm(const std::string & name, int gradeToSing, int gradeToExecute);
+    //ShrubberyCreationForm(const std::string & name, int gradeToSing, int gradeToExecute);
     ShrubberyCreationForm(const ShrubberyCreationForm & src);
     ~ShrubberyCreationForm();
     ShrubberyCreationForm & operator=(const ShrubberyCreationForm & rhs);

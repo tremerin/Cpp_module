@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:47:46 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/23 05:06:59 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:01:27 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
 AForm::AForm(const std::string & name, int gradeToSign)
-: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(0)
+: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(0), _signed(false)
 {
     if (gradeToSign < 1)
         throw AForm::GradeTooHighException();
     if (gradeToSign > 150)
         throw AForm::GradeTooLowException();
-    //std::cout << "Constructor is called" <<std::endl;
+    std::cout << "AForm constructor2 is called" <<std::endl;
 }
 
 AForm::AForm(const std::string & name, int gradeToSign, int gradeToExecute)
-: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
+: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signed(false)
 {
     if (gradeToSign < 1)
         throw AForm::GradeTooHighException();
     if (gradeToSign > 150)
         throw AForm::GradeTooLowException();
-    //std::cout << "Constructor is called" <<std::endl;
+    std::cout << "AForm constructor3 is called" <<std::endl;
 }
 
 AForm::AForm(const AForm & src)
@@ -80,9 +80,9 @@ void    AForm::beSigned(const Bureaucrat & bureaucrat)
 
 std::ostream &  operator<<(std::ostream & o, const AForm & rhs)
 {
-    o << "------------- Form Info -------------" << std::endl;
-    o << "Form name: " << rhs.getName() << std::endl;
-    o << "Grade to sign: " << rhs.getGradeToSign() << std::endl;
+    o << "<<< Form Info >>>"  << std::endl;
+    o << "Form name       : " << rhs.getName() << std::endl;
+    o << "Grade to sign   : " << rhs.getGradeToSign() << std::endl;
     o << "Grade to execute: " << rhs.getGradeToExecute() << std::endl;
     return o;
 }

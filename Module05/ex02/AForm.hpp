@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:49:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/26 03:11:15 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:01:34 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,17 @@ public:
         public:
             virtual const char* what() const throw() {return "Grade too high";}
     };
+
     class GradeTooLowException : public std::exception
     {
         public:
             virtual const char* what() const throw() {return "Grade too low";}
+    };
+
+    class NotSignedException : public std::exception
+    {
+        public:
+            virtual const char* what() const throw() {return "Form not signed";}
     };
 };
 
