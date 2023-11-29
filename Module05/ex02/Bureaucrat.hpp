@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:27:08 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:17:36 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:39:13 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ public:
 	void			incrementGrade(void);
 	void			decrementGrade(void);
 	void        	signForm(AForm & form);
-	void        	executeForm(const AForm & form);
+	void        	executeForm(const AForm & form) const;
 
 	//Exeception Classes
 	//heredan de la clase padre exception, implementamos la virtual funcion what()

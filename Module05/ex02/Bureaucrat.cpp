@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:26:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:21:21 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:38:58 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void    Bureaucrat::signForm(AForm & form)
     }
 }
 
-void    Bureaucrat::executeForm(const AForm & form)
+void    Bureaucrat::executeForm(const AForm & form) const
 {
     try 
     {

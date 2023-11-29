@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:46:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 22:47:57 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:48:36 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 {
     try
     {
-        Bureaucrat bureaucrat1("Burocrata 1",10);
+        Bureaucrat bureaucrat1("Burocrata 1",14);
         Bureaucrat bureaucrat2("Burocrata 2",21);
         //AForm form1("Formulario 1", 20 , 5);
         AForm *form2 = new ShrubberyCreationForm("target");

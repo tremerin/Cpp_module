@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 04:24:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:00:11 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:43:36 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target)
 
 }
  */
-void ShrubberyCreationForm::execute(const Bureaucrat & executor)
+void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 {
     if (this->getSigned() == false)
         throw AForm::NotSignedException();

@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:49:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:01:34 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:38:45 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
     int             getGradeToSign() const;
     int             getGradeToExecute() const;
     void            beSigned(const Bureaucrat & bureaucrat);
-    virtual void	execute(const Bureaucrat & executor) = 0;
+    virtual void	execute(const Bureaucrat & executor) const = 0;
 
     //Exception Classes
     class GradeTooHighException : public std::exception

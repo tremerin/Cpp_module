@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 03:39:22 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 22:50:21 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/11/29 23:41:39 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
     ~ShrubberyCreationForm();
     ShrubberyCreationForm & operator=(const ShrubberyCreationForm & rhs);
     //std::ostream & operator<<(std::ostream & o, const ShrubberyCreationForm & rhs);
-    void	execute(const Bureaucrat & executor);
+    void	execute(const Bureaucrat & executor) const;
 };
 
 #endif
