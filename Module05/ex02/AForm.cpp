@@ -6,13 +6,13 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:47:46 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:01:27 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:33:19 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(const std::string & name, int gradeToSign)
+/* AForm::AForm(const std::string & name, int gradeToSign)
 : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(0), _signed(false)
 {
     if (gradeToSign < 1)
@@ -20,7 +20,7 @@ AForm::AForm(const std::string & name, int gradeToSign)
     if (gradeToSign > 150)
         throw AForm::GradeTooLowException();
     std::cout << "AForm constructor2 is called" <<std::endl;
-}
+} */
 
 AForm::AForm(const std::string & name, int gradeToSign, int gradeToExecute)
 : _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signed(false)
@@ -43,7 +43,7 @@ AForm::~AForm()
     //std::cout << "Destructor is called" <<std::endl;
 }
 
-AForm &   AForm::operator=(const AForm & rhs)
+AForm & AForm::operator=(const AForm & rhs)
 {
     //std::cout << "Assignation operator called" << std::endl;
     if (this != &rhs)

@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 03:39:22 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:41:39 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/01 00:59:33 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ private:
     ShrubberyCreationForm();
 public:
     ShrubberyCreationForm(const std::string & target);
-    ShrubberyCreationForm(const std::string & name, int gradeToSing);
+    //ShrubberyCreationForm(const std::string & name, int gradeToSing);
     //ShrubberyCreationForm(const std::string & name, int gradeToSing, int gradeToExecute);
     ShrubberyCreationForm(const ShrubberyCreationForm & src);
     ~ShrubberyCreationForm();

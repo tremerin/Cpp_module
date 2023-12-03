@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 04:24:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:43:36 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:10:34 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,24 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string & target)
     std::cout << "Shrubbery constructor is called" <<std::endl;
 }
 
-/* ShrubberyCreationForm::ShrubberyCreationForm(const std::string & name, int gradeToSing)
-: AForm(name, gradeToSing)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & src)
+: AForm(src), _target(src._target)
 {
-
+    std::cout << "Shrubbery copy constructor is called" <<std::endl;
 }
- */
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+    std::cout << "Shrubbery destructor is called" <<std::endl;
+}
+
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm & rhs)
+{
+    std::cout << "Asignation operator is called" << std::endl;
+    (void)rhs;
+    return *this;
+}
+
 void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 {
     if (this->getSigned() == false)
@@ -32,7 +44,7 @@ void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
         throw AForm::GradeTooLowException();
 
     std::cout << executor.getName() << " execute " << this->getName() << std::endl;
-    std::ofstream file("archivo.txt");
+    std::ofstream file(this->getName() + "_shrubbery");
     file << "                 " << std::endl;
     file << "       oOOoo     " << std::endl;
     file << "      oOOOOo     " << std::endl;

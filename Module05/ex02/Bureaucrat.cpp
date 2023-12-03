@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 04:26:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:38:58 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/01 01:00:29 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Bureaucrat::~Bureaucrat()
     //std::cout << "Destructor is called" <<std::endl;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat & rhs)
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat & rhs)
 {
     //std::cout << "Assignation operator called" << std::endl;
     if (this != &rhs)

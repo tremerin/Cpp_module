@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:49:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/29 23:38:45 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:29:02 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ private:
     AForm();
 
 public:
-    AForm(const std::string & name, int gradeToSign);
+    //AForm(const std::string & name, int gradeToSign);
     AForm(const std::string & name, int gradeToSign, int gradeToExecute);
     AForm(const AForm & src);
-    ~AForm();
+    virtual ~AForm();
 
     AForm &   operator=(const AForm & rhs);
 
