@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:47:46 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/05 04:54:53 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:38:18 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 } */
 
 AForm::AForm(const std::string & name, int gradeToSign, int gradeToExecute)
-: _name(name), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute), _signed(false)
+: _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute)
 {
     if (gradeToSign < 1)
         throw AForm::GradeTooHighException();
@@ -33,7 +33,7 @@ AForm::AForm(const std::string & name, int gradeToSign, int gradeToExecute)
 }
 
 AForm::AForm(const AForm & src)
-: _name(src.getName()), _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute()) 
+: _name(src.getName()), _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute())
 {
     //std::cout << "Copy onstructor is called" <<std::endl;
 }

@@ -5,7 +5,7 @@ OBJS	= $(SRC:.cpp=.o)
 INC		= -I ./Bureaucrat.hpp ./AForm.cpp ./ShrubberyCreationForm.hpp\
 		  ./RobotomyRequestForm.hpp	./PresidentialPardonForm
 CC		= c++
-CFLAGS	= #-Wall -Werror -Wextra -std=c++98
+CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
 
 BOLD	= \033[1m

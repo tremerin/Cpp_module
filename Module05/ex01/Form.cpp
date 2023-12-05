@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:47:46 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/11/23 05:06:59 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/01 19:13:19 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Form::Form(const std::string & name, int gradeToSign, int gradeToExecute)
 }
 
 Form::Form(const Form & src)
-: _name(src.getName()), _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute()) 
+: _name(src.getName()), _gradeToSign(src.getGradeToSign()), _gradeToExecute(src.getGradeToExecute())
 {
     //std::cout << "Copy onstructor is called" <<std::endl;
 }
@@ -80,7 +80,7 @@ void    Form::beSigned(const Bureaucrat & bureaucrat)
 
 std::ostream &  operator<<(std::ostream & o, const Form & rhs)
 {
-    o << "------------- Form Info -------------" << std::endl;
+    o << "Info:" << std::endl;
     o << "Form name: " << rhs.getName() << std::endl;
     o << "Grade to sign: " << rhs.getGradeToSign() << std::endl;
     o << "Grade to execute: " << rhs.getGradeToExecute() << std::endl;
