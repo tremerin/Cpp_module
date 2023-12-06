@@ -6,12 +6,12 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 20:13:08 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/04 00:27:53 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/06 20:07:42 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYrEQUESTFORM_HPP
-# define ROBOTOMYrEQUESTFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include "AForm.hpp"
 # include <ctime>
@@ -31,7 +31,7 @@ public:
     ~RobotomyRequestForm();
     RobotomyRequestForm & operator=(const RobotomyRequestForm & rhs);
     void	execute(const Bureaucrat & executor) const;
-    
+
 };
 
 

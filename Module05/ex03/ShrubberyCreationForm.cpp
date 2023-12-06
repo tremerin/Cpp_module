@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 04:24:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/03 21:10:34 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:59:58 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void ShrubberyCreationForm::execute(const Bureaucrat & executor) const
 {
     if (this->getSigned() == false)
         throw AForm::NotSignedException();
-    else if (executor.getGrade() > this->getGradeToExecute()) 
+    else if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
 
     std::cout << executor.getName() << " execute " << this->getName() << std::endl;
-    std::ofstream file(this->getName() + "_shrubbery");
+    std::ofstream file(this->_target + "_shrubbery");
     file << "                 " << std::endl;
     file << "       oOOoo     " << std::endl;
     file << "      oOOOOo     " << std::endl;
