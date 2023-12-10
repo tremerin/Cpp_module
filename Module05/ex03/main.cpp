@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 04:46:07 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/05 04:53:00 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/09 18:57:01 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int main(void)
 {
     Intern someRandonIntern;
-    Bureaucrat burro("Ramon", 33);
+    Bureaucrat burro("Ramon", 149);
     AForm *rrf1;
     AForm *rrf2;
 
@@ -28,6 +28,15 @@ int main(void)
     rrf2 = someRandonIntern.makeForm("shrubberyCreation", "arbolito");
     burro.signForm(*rrf1);
     burro.signForm(*rrf2);
-    burro.executeForm(*rrf1);
+    try
+    {
+        burro.executeForm(*rrf1);
+        throw Intern::NullPointer();
+
+    }
+    catch (Intern::NullPointer & e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     return (0);
 }

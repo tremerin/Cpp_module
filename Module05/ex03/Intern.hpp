@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 03:26:22 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/05 04:46:15 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/09 18:47:27 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ public:
     Intern & operator=(const Intern & rhs);
     AForm *makeForm(std::string name, std::string target);
 
+    class NullPointer : public std::exception
+	{
+        public:
+            virtual const char* what() const throw() {return "Null pointer";}
+    };
+
 };
-    
+
 #endif
