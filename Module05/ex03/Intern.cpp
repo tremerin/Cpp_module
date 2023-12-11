@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 03:30:12 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/05 04:51:33 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/11 19:09:35 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,22 @@ AForm *Intern::makeForm(std::string name, std::string target)
 {
     if (!name.compare("shrubbery creation"))
     {
+        std::cout << "Intern creates " << name << std::endl;
         return new ShrubberyCreationForm(target);
     }
     else if (!name.compare("robotomy request"))
     {
+        std::cout << "Intern creates " << name << std::endl;
         return new RobotomyRequestForm(target);
     }
     else if (!name.compare("presidential pardon"))
     {
+        std::cout << "Intern creates " << name << std::endl;
         return new PresidentialPardonForm(target);
     }
     else
+    {
+        std::cerr << "Invalid name: " << name << std::endl;
         return nullptr;
+    }
 }
