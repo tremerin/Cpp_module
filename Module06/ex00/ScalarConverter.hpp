@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 18:10:45 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/12 18:21:57 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/15 18:45:26 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
+# include <string>
 
 class ScalarConverter
 {

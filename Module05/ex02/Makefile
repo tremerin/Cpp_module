@@ -7,6 +7,9 @@ INC		= -I ./Bureaucrat.hpp ./AForm.cpp ./ShrubberyCreationForm.hpp\
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
+ifeq ($(UNAME), Linux)
+CFLAGS	= -Wall -Wextra
+endif
 
 BOLD	= \033[1m
 RED		= \033[31;1m
