@@ -1,7 +1,7 @@
-NAME	= Iter
+NAME	= Array
 SRC		= main.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I Iter.hpp
+INC		= -I Array.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf

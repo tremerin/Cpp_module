@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 19:55:23 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/28 18:39:34 by fgalan-r         ###   ########.fr       */
+/*   Created: 2023/12/28 19:20:57 by fgalan-r          #+#    #+#             */
+/*   Updated: 2023/12/28 19:26:23 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include <iostream>
+#include "Array.hpp"
 
-# include <iostream>
-
-template <typename T>
-void iter(T *array, unsigned length, void(*f)(T &))
+int main(void)
 {
-	for (int x = 0; x < lenght; x++)
-	{
-		funt(array[i]);
-	}
-}
+	Array<int> myArray;
+	Array<int> myArray2(5);
 
-template <typename T>
-void funt(T item)
-{
-	std::cout << T << std::endl;
+	return (0);
 }
-#endif
