@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:31:38 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/16 20:50:01 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/01 20:45:19 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,6 @@ ScalarConverter & ScalarConverter::operator=(const ScalarConverter & rhs)
 
 static int isChar(const std::string str)
 {
-	//std::cout << str.length() << std::endl;
-	//std::cout << std::isalnum(str[0]) << std::endl;
-	//std::cout << std::isprint(str[0]) << std::endl;
 	if (str.length() == 1) 
 		if (std::isalnum(str[0]) && std::isprint(str[0]))
 			return (1);
@@ -120,25 +117,39 @@ static int isDouble(const std::string str)
 	return (1);
 }
 
+static int isPseudoDouble(const std::string str)
+{
+	if (str == "nan" || str == "inf" || str == "+inf" || str == "-inf")
+		return (1);
+	return (0);
+}
+
+static int isPseudoFloat(const std::string str)
+{
+	if (str == "nanf" || str == "inff" || str == "+inff" || str == "-inff")
+		return (1);
+	return (0);
+}
+
 void ScalarConverter::Convert(const std::string str)
 {
-	bool	typeChar   = false;
-	bool	typeInt    = false;
-	bool	typeFloat  = false;
-	bool	typeDouble = false;
+	bool	typeChar      = isChar(str);
+	bool	typeInt       = isInt(str);
+	bool	typeFloat     = isFloat(str);
+	bool	typeDouble    = isDouble(str);
+	bool	literalFloat  = isPseudoFloat(str);
+	bool	literalDouble = isPseudoDouble(str);
 
-	typeChar = isChar(str);
 	if (typeChar)
 		std::cout << "Is char" << std::endl;
-	typeInt = isInt(str);
 	if (typeInt)
 		std::cout << "Is int" << std::endl;
-	typeFloat = isFloat(str);
 	if (typeFloat)
 		std::cout << "Is float" << std::endl;
-	typeDouble = isDouble(str);
 	if (typeDouble)
 		std::cout << "Is double" << std::endl;
-	//else
-	//	std::cout << "No type" << std::endl;
+	if (literalFloat)
+		std::cout << "Is pseudo float" << std::endl;
+	if (literalDouble)
+		std::cout << "Is pseudo double" << std::endl;
 }
