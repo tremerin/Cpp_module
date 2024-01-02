@@ -1,7 +1,7 @@
-NAME	= Converter
-SRC		= ScalarConverter.cpp main.cpp
+NAME	= Serializer
+SRC		= Serializer.cpp main.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./ScalarConverter.hpp
+INC		= -I ./Serializer.hpp ./Data.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
@@ -13,6 +13,12 @@ YELLOW	= \033[33;1m
 CYAN	= \033[36;1m
 WHITE	= \033[37;1m
 RESET	= \033[0m
+
+UNAME	= $(shell uname -s)
+
+ifeq ($(UNAME), Linux)
+CFLAGS	= -Wall -Wextra
+endif
 
 all : $(NAME)
 

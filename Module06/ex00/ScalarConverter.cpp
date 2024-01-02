@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:31:38 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/01 20:45:19 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/02 04:58:23 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ ScalarConverter & ScalarConverter::operator=(const ScalarConverter & rhs)
 	return *this;
 }
 
+// +++++++++++++++++++++++++++ get type ++++++++++++++++++++++++++++ //
+
 static int isChar(const std::string str)
 {
 	if (str.length() == 1) 
-		if (std::isalnum(str[0]) && std::isprint(str[0]))
+		if (std::isalpha(str[0]) && std::isprint(str[0]))
 			return (1);
 	return (0);
 }
@@ -114,6 +116,8 @@ static int isDouble(const std::string str)
 	else
 		if (!std::isdigit(str[0]))
 			return (0);
+	if (doot == false)
+		return (0);
 	return (1);
 }
 
@@ -131,7 +135,7 @@ static int isPseudoFloat(const std::string str)
 	return (0);
 }
 
-void ScalarConverter::Convert(const std::string str)
+/* static void debugType(const std::string str)
 {
 	bool	typeChar      = isChar(str);
 	bool	typeInt       = isInt(str);
@@ -152,4 +156,103 @@ void ScalarConverter::Convert(const std::string str)
 		std::cout << "Is pseudo float" << std::endl;
 	if (literalDouble)
 		std::cout << "Is pseudo double" << std::endl;
+} */
+
+enum Type
+{
+	typeChar,
+	typeInt,
+	typeFloat,
+	typeDouble,
+	typePseudoFloat,
+	typePseudoDouble,
+	noType
+};
+
+static Type getType(const std::string str)
+{
+	if (isChar(str))
+		return (typeChar);
+	else if (isInt(str))
+		return (typeInt);
+	else if (isFloat(str))
+		return (typeFloat);
+	else if (isDouble(str))
+		return (typeDouble);
+	else if (isPseudoFloat(str)) 
+		return (typePseudoFloat);
+	else if (isPseudoDouble(str))
+		return (typePseudoDouble);
+	return (noType);
+}
+
+// +++++++++++++++++++++++++++ convert type ++++++++++++++++++++++++++++ //
+
+static void charConversion(char c)
+{
+	std::cout << "char: '" << c << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(c) << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+}
+
+static void intConversion(const std::string str)
+{
+	int num = std::stoi(str);
+	if (num >= 32 && num <= 126)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
+	std::cout << "int: " << num << std::endl;
+	std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+}
+
+static void floatConversion(const std::string str)
+{
+	(void)str;
+}
+
+static void doubleConversion(const std::string str)
+{
+	(void)str;
+}
+
+static void pseudoFloatConversion(const std::string str)
+{
+	(void)str;
+}
+
+static void pseudoDoubleConversion(const std::string str)
+{
+	(void)str;
+}
+
+void	ScalarConverter::convert(const std::string str)
+{
+	//debugType(str);
+	switch (getType(str))
+	{
+		case typeChar:
+			charConversion(str[0]);
+			break;
+		case typeInt:
+			intConversion(str);
+			break;
+		case typeFloat:
+			floatConversion(str);
+			break;
+		case typeDouble:
+			doubleConversion(str);
+			break;
+		case typePseudoFloat:
+			pseudoFloatConversion(str);
+			break;
+		case typePseudoDouble:
+			pseudoDoubleConversion(str);
+			break;
+		default:
+			std::cout << "Error: invalid input" << std::endl;
+			break;
+	}
 }

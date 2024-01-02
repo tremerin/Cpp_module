@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:42:47 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/30 15:14:38 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2023/12/31 00:01:15 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ public:
 
 	Array	& operator=(const Array & rhs)
 	{
-		if (this != &rhs) {
+		if (this != &rhs)
+		{
 			delete [] _array;
 			_array = new T[rhs._size];
 			this->_size = rhs._size;
