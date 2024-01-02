@@ -1,7 +1,7 @@
-NAME	= Converter
-SRC		= ScalarConverter.cpp main.cpp
+NAME	= Serializer
+SRC		= Serializer.cpp main.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./ScalarConverter.hpp
+INC		= -I ./Serializer.hpp ./Data.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
