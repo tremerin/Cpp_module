@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 03:30:12 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/11 19:09:35 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/03 01:13:06 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,21 @@ Intern & Intern::operator=(const Intern & rhs)
 
 AForm *Intern::makeForm(std::string name, std::string target)
 {
-    if (!name.compare("shrubbery creation"))
+	std::string	forms[3] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+	int	i = 0;
+
+	while (i < 3 && forms[i].compare(name))
+		i++;
+	
+	switch (i)
     {
-        std::cout << "Intern creates " << name << std::endl;
-        return new ShrubberyCreationForm(target);
-    }
-    else if (!name.compare("robotomy request"))
-    {
-        std::cout << "Intern creates " << name << std::endl;
-        return new RobotomyRequestForm(target);
-    }
-    else if (!name.compare("presidential pardon"))
-    {
-        std::cout << "Intern creates " << name << std::endl;
-        return new PresidentialPardonForm(target);
-    }
-    else
-    {
-        std::cerr << "Invalid name: " << name << std::endl;
-        return nullptr;
-    }
+		case 0:
+			return new PresidentialPardonForm(target);
+		case 1:
+			return new RobotomyRequestForm(target);
+		case 2:
+			return new ShrubberyCreationForm(target);
+		default:
+			return (nullptr);
+	}
 }

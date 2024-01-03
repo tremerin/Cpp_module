@@ -1,7 +1,7 @@
-NAME	= Serializer
-SRC		= Serializer.cpp main.cpp
+NAME	= Base
+SRC		= Base.cpp main.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I ./Serializer.hpp ./Data.hpp
+INC		= -I ./Base.hpp 
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
