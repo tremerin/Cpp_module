@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <iterator>
 #include <vector>
 #include <deque>
 #include <list>
@@ -51,6 +52,6 @@ int main(void)
     for (it = l.begin(); it != ite; it++)
         std::cout << *it << std::endl; */
 
-    for_each(l.back(), l.end(), displayInt);
+    //for_each(l.back(), l.end(), displayInt);
     return (0);
 }
