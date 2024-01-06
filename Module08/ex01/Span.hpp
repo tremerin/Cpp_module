@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:50:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/04 06:13:40 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/06 05:02:56 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
     unsigned int        _size;
     std::vector<int>    _vector;
     Span(void);
+    
 public:
     Span(const unsigned int N);
     Span(const Span & src);
@@ -31,7 +32,7 @@ public:
 
     Span & operator=(const Span & rhs);
 
-    void addNumber(const int number);
+    void    addNumber(const int number);
     int     shortestSpan(void);
     int     longestSpan(void);
 
