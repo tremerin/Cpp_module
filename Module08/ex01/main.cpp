@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 06:00:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/06 05:13:17 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/07 18:35:51 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ int main(void)
 {
     try
     {
-        int n = 6;
+        int n = 10000;
         Span    mySpan(n);
         //fillVector(n, &mySpan);
-        mySpan.addNumber(5);
+        /* mySpan.addNumber(5);
         mySpan.addNumber(390);
         mySpan.addNumber(21);
         mySpan.addNumber(12);
         mySpan.addNumber(33);
-        mySpan.addNumber(393);
- 
+        mySpan.addNumber(393); */
+
         std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
         std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
     }
@@ -43,6 +43,6 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
-    
+
     return (0);
 }

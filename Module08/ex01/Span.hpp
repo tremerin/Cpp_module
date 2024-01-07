@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:50:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/06 05:02:56 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/07 18:30:13 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <algorithm>
 # include <vector>
+# include <ctime>
+# include <cmath>
 
 class Span
 {
@@ -24,7 +26,7 @@ private:
     unsigned int        _size;
     std::vector<int>    _vector;
     Span(void);
-    
+
 public:
     Span(const unsigned int N);
     Span(const Span & src);
