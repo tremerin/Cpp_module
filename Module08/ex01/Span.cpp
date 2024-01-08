@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 05:38:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/08 05:06:29 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/08 20:12:58 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ Span::Span(void) : _N(0), _size(0)
 Span::Span(const unsigned int n) : _N(n), _size(0)
 {
     std::cout << "constructor called" << std::endl;
-    this->_vector.resize(_N);
+    this->_vector.reserve(_N);
     this->_size = this->_N;
-    srand(time(NULL));
+    /* srand(time(NULL));
     //std::fill(this->_vector.begin(), this->_vector.end(), rand());
     std::vector<int>::iterator it;
     std::vector<int>::iterator ite = this->_vector.end();
     for (it = this->_vector.begin(); it != ite; it++)
-        *it = rand();
+        *it = rand(); */
 }
 
 Span::Span(const Span & src)
@@ -52,7 +52,7 @@ Span & Span::operator=(const Span & rhs)
     return (*this);
 }
 
-void Span::addNumber(const int number)
+void    Span::addNumber(const int number)
 {
     if (this->_size < this->_N)
     {
@@ -61,6 +61,30 @@ void Span::addNumber(const int number)
     }
     else
         throw MaxSizeException();
+}
+
+void    Span::fillSpan(const unsigned int n)
+{
+    srand(time(NULL));
+
+    unsigned int i = 0;
+    while (i < n)
+    {
+        if (this->_size < this->_N)
+        {
+            this->_vector.push_back(rand());
+            this->_size++;
+        }
+        else
+            throw MaxSizeException();
+        i++;
+    }
+    /* std::vector<int>::iterator it;
+    std::vector<int>::iterator ite = this->_vector.end();
+    for (it = this->_vector.begin(); it != ite; it++)
+        *it = rand(); */
+
+    //std::generate(this->_vector.begin(), this->_vector.end(), rand());
 }
 
 int Span::shortestSpan(void)

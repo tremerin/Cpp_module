@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 06:00:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/07 18:35:51 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:54:00 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,44 @@
 
 int main(void)
 {
-    try
+    // test 1
     {
-        int n = 10000;
-        Span    mySpan(n);
-        //fillVector(n, &mySpan);
-        /* mySpan.addNumber(5);
-        mySpan.addNumber(390);
-        mySpan.addNumber(21);
-        mySpan.addNumber(12);
-        mySpan.addNumber(33);
-        mySpan.addNumber(393); */
+        std::cout << "+++++++ test 1 +++++++" << std::endl;
+        try
+        {
+            int n = 10000;
+            Span    mySpan(n);
+            //fillVector(n, &mySpan);
+            /* mySpan.addNumber(5);
+            mySpan.addNumber(390);
+            mySpan.addNumber(21);
+            mySpan.addNumber(12);
+            mySpan.addNumber(33);
+            mySpan.addNumber(393); */
 
-        std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
-        std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
+            std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
+            std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
     }
-    catch(const std::exception& e)
+    // test 2
     {
-        std::cerr << e.what() << '\n';
+        std::cout << "+++++++ test 2 +++++++" << std::endl;
+        Span sp = Span(5);
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+        /* $> ./ex01
+        2
+        14
+        $> */
     }
 
     return (0);

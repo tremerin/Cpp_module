@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:50:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/07 18:30:13 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/08 19:55:45 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ public:
     void    addNumber(const int number);
     int     shortestSpan(void);
     int     longestSpan(void);
+    void    fillSpan(const unsigned int n);
 
 	class MaxSizeException : public std::exception
 	{
