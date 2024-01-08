@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 05:38:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/07 20:18:04 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/08 05:06:29 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,14 @@ int Span::longestSpan(void)
         std::vector<int> cp(_vector.size());
         std::copy(this->_vector.begin(), this->_vector.end(), cp.begin());
         std::sort(cp.begin(), cp.end());
-        /* std::vector<int>::const_iterator it;
+        std::vector<int>::const_iterator it;
         std::vector<int>::const_iterator ite = cp.end();
         for (it = cp.begin(); it < ite; it++)
-            std::cout << *it << std::endl; */
-        std::cout << "La operacion es " << *(cp.end()-1) << " - " << *cp.begin() << std::endl;
-        return (*cp.end() - *cp.begin());
+            std::cout << *it << std::endl;
+        std::cout << "La operacion es " << *(cp.end() -1) << " - " << *cp.begin() << std::endl;
+        std::cout << "La operacion es " << cp.back() << " - " << cp.front() << std::endl;
+        //return (*cp.end() - *cp.begin());
+        return (std::abs(cp.back() - cp.front()));
     }
     return (-1);
 }
