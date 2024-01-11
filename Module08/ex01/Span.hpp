@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 04:50:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/08 19:55:45 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/09 19:52:46 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <vector>
 # include <ctime>
 # include <cmath>
+# include <limits>
 
 class Span
 {
@@ -43,6 +44,16 @@ public:
 	{
         public:
             virtual const char* what() const throw() { return "maximum space achieved"; }
+    };
+    class NoIntException : public std::exception
+	{
+        public:
+            virtual const char* what() const throw() { return "is not an integer"; }
+    };
+    class NoNumberStored : public std::exception
+	{
+        public:
+            virtual const char* what() const throw() { return "no number stored"; }
     };
 };
 

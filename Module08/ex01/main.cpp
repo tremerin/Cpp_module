@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 06:00:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/08 19:54:00 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/09 20:07:49 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,6 @@ int main(void)
     // test 1
     {
         std::cout << "+++++++ test 1 +++++++" << std::endl;
-        try
-        {
-            int n = 10000;
-            Span    mySpan(n);
-            //fillVector(n, &mySpan);
-            /* mySpan.addNumber(5);
-            mySpan.addNumber(390);
-            mySpan.addNumber(21);
-            mySpan.addNumber(12);
-            mySpan.addNumber(33);
-            mySpan.addNumber(393); */
-
-            std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
-            std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << e.what() << '\n';
-        }
-    }
-    // test 2
-    {
-        std::cout << "+++++++ test 2 +++++++" << std::endl;
         Span sp = Span(5);
         sp.addNumber(6);
         sp.addNumber(3);
@@ -62,6 +39,47 @@ int main(void)
         2
         14
         $> */
+    }
+    // test 2
+    {
+        std::cout << "+++++++ test 2 +++++++" << std::endl;
+        try
+        {
+            int n = 100000;
+            Span    mySpan(n);
+            mySpan.addNumber(5);
+            mySpan.addNumber(390);
+            mySpan.addNumber(12);
+            mySpan.addNumber(12);
+            mySpan.addNumber(33);
+            mySpan.fillSpan(100);
+            mySpan.addNumber(39300);
+
+            std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
+            std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    // test 3
+    {
+        std::cout << "+++++++ test 3 +++++++" << std::endl;
+        try
+        {
+            int n = 0;
+            Span    mySpan(n);
+
+            std::cout << "shortest span: " << mySpan.shortestSpan() << std::endl;
+            std::cout << "longest span: " << mySpan.longestSpan() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+
+
     }
 
     return (0);

@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 05:38:16 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/08 20:12:58 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/09 20:07:28 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 Span::Span(void) : _N(0), _size(0)
 {
-    std::cout << "constructor called" << std::endl;
+    //std::cout << "constructor called" << std::endl;
 }
 
 Span::Span(const unsigned int n) : _N(n), _size(0)
 {
-    std::cout << "constructor called" << std::endl;
+    //std::cout << "constructor called" << std::endl;
     this->_vector.reserve(_N);
-    this->_size = this->_N;
+    //this->_size = this->_N;
     /* srand(time(NULL));
     //std::fill(this->_vector.begin(), this->_vector.end(), rand());
     std::vector<int>::iterator it;
@@ -33,12 +33,12 @@ Span::Span(const unsigned int n) : _N(n), _size(0)
 Span::Span(const Span & src)
 {
     *this = src;
-    std::cout << "copy constructor called" << std::endl;
+    //std::cout << "copy constructor called" << std::endl;
 }
 
 Span::~Span()
 {
-    std::cout << "destructor called" << std::endl;
+    //std::cout << "destructor called" << std::endl;
 }
 
 Span & Span::operator=(const Span & rhs)
@@ -93,19 +93,21 @@ int Span::shortestSpan(void)
     {
         std::vector<int> cp = this->_vector;
         std::sort(cp.begin(), cp.end());
-        int span = cp[1] - cp[0];
+        int span = std::abs(cp[1] - cp[0]);
         //std::cout << "init span: " << span << std::endl;
         std::vector<int>::const_iterator it;
         std::vector<int>::const_iterator ite = cp.end();
         for (it = cp.begin(); it < ite - 1; it++)
         {
-            if (*(it + 1) - *it < span)
-                span = *(it + 1) - *it;
+            if (abs(*(it + 1) - *it) < span)
+                span = abs(*(it + 1) - *it);
             //std::cout << "span: " << span << std::endl;
-            std::cout << "it: " << *it << std::endl;
+            //std::cout << "it: " << *it << std::endl;
         }
         return (span);
     }
+    else
+        throw  NoNumberStored();
     return (-1);
 }
 
@@ -119,12 +121,14 @@ int Span::longestSpan(void)
         std::vector<int>::const_iterator it;
         std::vector<int>::const_iterator ite = cp.end();
         for (it = cp.begin(); it < ite; it++)
-            std::cout << *it << std::endl;
-        std::cout << "La operacion es " << *(cp.end() -1) << " - " << *cp.begin() << std::endl;
-        std::cout << "La operacion es " << cp.back() << " - " << cp.front() << std::endl;
+            //std::cout << *it << std::endl;
+        //std::cout << "La operacion es " << *(cp.end() -1) << " - " << *cp.begin() << std::endl;
+        //std::cout << "La operacion es " << cp.back() << " - " << cp.front() << std::endl;
         //return (*cp.end() - *cp.begin());
         return (std::abs(cp.back() - cp.front()));
     }
+    else
+        throw  NoNumberStored();
     return (-1);
 }
 
