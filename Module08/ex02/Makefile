@@ -1,7 +1,7 @@
-NAME	= easyfind
+NAME	= mutantStack
 SRC		= main.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I easyfind.hpp
+INC		= -I mutantStack.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
