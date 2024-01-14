@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 18:44:52 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/13 20:12:26 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:46:41 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main (void)
 	}
 	//test list
 	{
-		std::cout << "+++++ subject test +++++" << std::endl;
+		std::cout << "+++++ subject test 2 +++++" << std::endl;
 		std::list<int> mstack;;
 		mstack.push_back(5);
 		mstack.push_back(17);

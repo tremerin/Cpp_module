@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 17:31:38 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/02 04:58:23 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/14 00:49:24 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,7 @@ static void charConversion(char c)
 static void intConversion(const std::string str)
 {
 	int num = std::stoi(str);
-	if (num >= 32 && num <= 126)
+	if (num < 32 || num > 126)
 		std::cout << "char: Non displayable" << std::endl;
 	else
 		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
@@ -210,22 +210,58 @@ static void intConversion(const std::string str)
 
 static void floatConversion(const std::string str)
 {
-	(void)str;
+	float num = std::stof(str);
+	if (num < 32 || num > 126)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(num) << std::endl;
+	if (num == static_cast<int>(num))
+	{
+		std::cout << "float: " << num << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+	}
+	else
+	{
+		std::cout << "float: " << num << "f" << std::endl;
+		std::cout << "double: " << static_cast<double>(num) << std::endl;
+	}
 }
 
 static void doubleConversion(const std::string str)
 {
-	(void)str;
+	double num = std::stof(str);
+	if (num < 32 || num > 126)
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(num) << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(num) << std::endl;
+	if (num == static_cast<int>(num))
+	{
+		std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
+		std::cout << "double: " << num << ".0" << std::endl;	
+	}
+	else
+	{
+		std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
+		std::cout << "double: " << num << std::endl;
+	}
 }
 
 static void pseudoFloatConversion(const std::string str)
 {
-	(void)str;
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: " << str << std::endl;
+	std::cout << "double: " << str.substr(0, str.length() -1) << std::endl;
 }
 
 static void pseudoDoubleConversion(const std::string str)
 {
-	(void)str;
+	std::cout << "char: impossible" << std::endl;
+	std::cout << "int: impossible" << std::endl;
+	std::cout << "float: " << str << "f" << std::endl;
+	std::cout << "double: " << str << std::endl;	
 }
 
 void	ScalarConverter::convert(const std::string str)
