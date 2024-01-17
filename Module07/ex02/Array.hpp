@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:42:47 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/31 00:01:15 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:02:01 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ public:
 		}
 		return *this;
 	}
-	
+
 	T	& operator[](unsigned int i) const
 	{
 		if (i >= _size)

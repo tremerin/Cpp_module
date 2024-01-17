@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 19:20:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/30 23:53:15 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/17 19:13:14 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,23 @@ int main(void)
 	}
 	std::cout << "-------- Test 2 ---------" << std::endl;
 	{
-		
+        Array<char> characters(10);
+        characters[0] = 'H';
+        characters[1] = 'O';
+        characters[2] = 'L';
+        characters[3] = 'A';
+        std::cout << characters[0] << std::endl;
+        std::cout << characters[1] << std::endl;
+        std::cout << characters[2] << std::endl;
+        std::cout << characters[3] << std::endl;
+        try
+        {
+            std::cout << characters[-2] << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
 	}
     return 0;
 }
