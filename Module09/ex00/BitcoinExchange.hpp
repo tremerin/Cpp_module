@@ -6,16 +6,17 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 02:05:24 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/15 02:37:21 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/18 04:18:28 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-# include<iostream>
-# include<algorithm>
-# include<map>
+# include <iostream>
+# include <algorithm>
+# include <fcntl.h>
+# include <map>
 
 class BitcoinExchange
 {
