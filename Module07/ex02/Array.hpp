@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 18:42:47 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/17 19:02:01 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:13:34 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ public:
 
 	~Array<T>(void)
 	{
-		delete	[]	_array;
+		if (_size > 0)
+			delete	[]	_array;
 		//std::cout << "Destructor called" << std::endl;
 	};
 

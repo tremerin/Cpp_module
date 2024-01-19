@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/28 19:20:57 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/17 19:13:14 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:49:24 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,10 @@ int main(void)
             std::cerr << e.what() << '\n';
         }
 	}
+    std::cout << "-------- Test 3 ---------" << std::endl;
+	{
+        Array<int> nums;
+        Array<int> nums2(0);
+    }
     return 0;
 }
