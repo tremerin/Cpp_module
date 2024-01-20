@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
     std::map<std::string, float>    data;
-    std::ifstream   infile(argv[1]); 
+    std::ifstream   infile(argv[1]);
 
     if (infile.is_open())
     {
@@ -18,10 +18,7 @@ int main(int argc, char **argv)
         std::string value;
         std::size_t pos;
         float       numValue;
-        /* std::getline(infile, content, '\n');
-        std::cout << "content: " << content << std::endl;
-        std::getline(infile, content, '\n');
-        std::cout << "content: " << content << std::endl; */
+
         while (getline(infile, content, '\n'))
         {
             std::cout << "content: " << content << std::endl;
