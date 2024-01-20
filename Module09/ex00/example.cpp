@@ -22,6 +22,7 @@ int valiedDate(std::string date)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
+        std::cerr << "invalid date" << '\n';
         return (0);
     }
     if ((year < 2009 || year > 2022) || (month < 1 || month > 12) || (day < 1 || day > 31))
