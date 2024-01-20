@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:55:23 by fgalan-r          #+#    #+#             */
-/*   Updated: 2023/12/30 15:20:16 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:44:02 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,16 @@ void iter(T *array, unsigned length, void(*f)(T &))
 }
 
 template <typename T>
-void funt(T item)
+void iter(T *array, unsigned length, void(*f)(T const &))
+{
+	for (unsigned int i = 0; i < length; i++)
+	{
+		f(array[i]);
+	}
+}
+
+template <typename T>
+void funt(T & item)
 {
 	std::cout << item << std::endl;
 }
