@@ -5,6 +5,31 @@
 # include <cstring>
 # include <map>
 
+
+int valiedDate(std::string date)
+{
+    int year, month, day;
+    try
+    {
+        year = stoi(date.substr(0,4));
+        month = stoi(date.substr(5,6));
+        day = stoi(date.substr(8,9));
+        //std::cout << year << std::endl;
+        //std::cout << month << std::endl;
+        //std::cout << day << std::endl;
+
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return (0);
+    }
+    if ((year < 2009 || year > 2022) || (month < 1 || month > 12) || (day < 1 || day > 31))
+        return (0);
+    return (1);
+}    
+
+
 int main(int argc, char **argv)
 {
     std::map<std::string, float>    data;
@@ -56,6 +81,7 @@ int main(int argc, char **argv)
     {
         std::cout << it->first << " => " << it->second << '\n';
         date = it->first;
+        valiedDate(date);
         //std::cout << date << std::endl;
     }
     return (0);
