@@ -11,7 +11,7 @@ int valiedDate(std::string date)
     int year, month, day;
     try
     {
-        year = stoi(date.substr(0,4));
+        year = stoi(date.substr(0,3));
         month = stoi(date.substr(5,6));
         day = stoi(date.substr(8,9));
     }
@@ -30,13 +30,13 @@ int valiedDate(std::string date)
         return (0);
     }
     return (1);
-}    
+}
 
 
 int main(int argc, char **argv)
 {
     std::map<std::string, float>    data;
-    std::ifstream   infile(argv[1]); 
+    std::ifstream   infile(argv[1]);
 
     if (infile.is_open())
     {
@@ -46,10 +46,7 @@ int main(int argc, char **argv)
         std::string value;
         std::size_t pos;
         float       numValue;
-        /* std::getline(infile, content, '\n');
-        std::cout << "content: " << content << std::endl;
-        std::getline(infile, content, '\n');
-        std::cout << "content: " << content << std::endl; */
+
         while (getline(infile, content, '\n'))
         {
             std::cout << "content: " << content << std::endl;
@@ -67,7 +64,7 @@ int main(int argc, char **argv)
                 //std::cerr << e.what() << '\n';
                 numValue = -1;
             }
-            
+
             std::cout << "numValue: " << numValue << std::endl;
             data.insert(std::pair<std::string, float>(key, numValue));
         }
