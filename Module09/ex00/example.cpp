@@ -78,9 +78,9 @@ int main(int argc, char **argv)
         std::cout << "no existe el archivo" << std::endl;
     }
     std::cout << "map container" << std::endl;
-    std::map<std::string, float>::const_iterator it;
+    std::map<std::string, float>::iterator it;
     std::string date;
-    for (it=data.begin(); it!=data.end(); ++it)
+    for (it=data.begin(); it != data.end(); ++it)
     {
         if (valiedDate(it->first))
         {
@@ -93,7 +93,17 @@ int main(int argc, char **argv)
         }
         //std::cout << date << std::endl;
     }
-    it = data.find("2015-19-26");
+    std::string search = "2015-09-25";
+    std::string nextDate;
+    std::cout << "metodo find" << std::endl;
+    it = data.find(search);
     std::cout << it->second << std::endl;
+    std::cout << "en caso de no existir buscar anterior" << std::endl;
+    for (it=data.begin(); it != data.end(); ++it)
+    {
+        if (search > it->first)
+            nextDate = it->first;
+    }
+    std::cout << nextDate << std::endl;
     return (0);
 }
