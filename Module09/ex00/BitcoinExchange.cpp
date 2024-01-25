@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 02:04:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/23 15:12:34 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/23 19:57:26 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ static std::string previousDate(std::string date, std::map<std::string, float> d
         if (date > it->first)
             previous = it->first;
     }
-    return (previous);    
+    return (previous);
 }
 
 static std::map<std::string, float> loadDataBase(const std::string file)
@@ -99,6 +99,7 @@ static std::map<std::string, float> loadDataBase(const std::string file)
 
     if (infile.is_open())
     {
+        getline(infile, content, '\n');
         while (getline(infile, content, '\n'))
         {
             key = content.substr(0, content.find(","));
@@ -120,7 +121,7 @@ static std::map<std::string, float> loadDataBase(const std::string file)
         exit (1);
     }
     return (data);
-} 
+}
 
 void BitcoinExchange::bitcoinExchange(std::string file)
 {
@@ -130,6 +131,7 @@ void BitcoinExchange::bitcoinExchange(std::string file)
     std::string     content;
     std::string     date;
     std::string     value;
+    float           num;
 
     if (infile.is_open())
     {
@@ -137,7 +139,7 @@ void BitcoinExchange::bitcoinExchange(std::string file)
         while (getline(infile, content, '\n'))
         {
             date = content.substr(0, content.find(" | "));
-            value = content.substr(content.find(" | ") + 3);            
+            value = content.substr(content.find(" | ") + 3);
             if (validDate(date) && validValue(value))
             {
                 it = data.find(previousDate(date, data));
@@ -146,7 +148,22 @@ void BitcoinExchange::bitcoinExchange(std::string file)
             else if (validDate(date) == false)
                 std::cout << "Error: bat input => " << date << std::endl;
             else if (validValue(value) == false)
-                std::cout << "Error: bat number => " << value << std::endl;
+            {
+                //std::cout << "Error: bat number => " << value << std::endl;
+                try
+                {
+                    num = stof(value);
+                    if (num < 0)
+                        std::cout << "Error: not a positive number." << std::endl;
+                    if (num > 1000)
+                        std::cout << "Error: too large a number." << std::endl;
+                }
+                catch(const std::exception& e)
+                {
+                    //std::cerr << e.what() << '\n';
+                    std::cout << "Error: bat number." << std::endl;
+                }
+            }
         }
     }
     else
