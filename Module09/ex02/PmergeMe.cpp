@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:03:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/25 14:04:10 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:35:23 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ PmergeMe & PmergeMe::operator=(const PmergeMe & src)
 {
     (void)src;
     return (*this);
-    std::cout << "PmergeMe destructor is called" << std::endl;
+    std::cout << "PmergeMe asignation operator is called" << std::endl;
 }
 
 static void	vectorMerge(std::vector<int> lArray, std::vector<int> rArray, std::vector<int> &array)
