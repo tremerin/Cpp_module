@@ -1,7 +1,7 @@
-NAME	= easyfind
-SRC		= main.cpp
+NAME	= PmergeMe
+SRC		= main.cpp PmergeMe.cpp
 OBJS	= $(SRC:.cpp=.o)
-INC		= -I easyfind.hpp
+INC		= -I PmergeMe.hpp
 CC		= c++
 CFLAGS	= -Wall -Werror -Wextra -std=c++98
 RM		= rm -rf
@@ -13,6 +13,10 @@ YELLOW	= \033[33;1m
 CYAN	= \033[36;1m
 WHITE	= \033[37;1m
 RESET	= \033[0m
+
+ifeq ($(UNAME), Linux)
+CFLAGS	= -Wall -Wextra
+endif
 
 all : $(NAME)
 
