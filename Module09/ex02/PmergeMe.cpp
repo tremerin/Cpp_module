@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:03:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/25 13:32:01 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 14:04:10 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,8 @@ void	PmergeMe::vectorPmergeMe(int argc, char **argv)
 	std::cout << "After: ";
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
-	std::cout << "\nTime to process a range of " << nums << " elements with std::vector: " 
-	<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
+	//std::cout << "\nTime to process a range of " << nums << " elements with std::vector: " 
+	//<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
 	//std::cout << "Vector time: " << time / (double)CLOCKS_PER_SEC *1e6 << " microseconds" << std::endl;
 	std::cout << std::endl;
 }
@@ -206,8 +206,8 @@ void	PmergeMe::dequePmergeMe(int argc, char **argv)
 	std::cout << "After: ";
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
-	std::cout << "\nTime to process a range of " << nums << " elements with std::deque: " 
-	<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
+	//std::cout << "\nTime to process a range of " << nums << " elements with std::deque: " 
+	//<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
 	//std::cout << "Queve time: " << time / (double)CLOCKS_PER_SEC *1e6 << " microseconds" << std::endl;
 	std::cout << std::endl;
 }
