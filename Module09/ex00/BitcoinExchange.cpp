@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 02:04:59 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/23 19:57:26 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:42:39 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ static bool validDate(std::string date)
     catch(const std::exception& e)
     {
         //std::cerr << e.what() << '\n';
-        //std::cerr << "invalid date" << std::endl;
         return (false);
     }
     int monthsDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -55,7 +54,6 @@ static bool validDate(std::string date)
         monthsDays[1] = 29;
     if ((year < 2009 || year > 2022) || (month < 1 || month > 12) || (day < 1 || day > monthsDays[month -1]))
     {
-        //std::cout << "invalid date" << std::endl;
         return (false);
     }
     return (true);
@@ -63,6 +61,8 @@ static bool validDate(std::string date)
 
 static bool validValue(std::string value)
 {
+    if (value.find_first_not_of("0123456789.") != std::string::npos)
+        return (false);
     try
     {
         float num = stof(value);
@@ -83,7 +83,7 @@ static std::string previousDate(std::string date, std::map<std::string, float> d
     std::string previous;
     for (it = data.begin(); it != data.end(); ++it)
     {
-        if (date > it->first)
+        if (date >= it->first)
             previous = it->first;
     }
     return (previous);
@@ -114,6 +114,7 @@ static std::map<std::string, float> loadDataBase(const std::string file)
                 std::cout << "invalid date: " << key << " -> " << value << std::endl;
             }
         }
+        infile.close();
     }
     else
     {
@@ -138,43 +139,47 @@ void BitcoinExchange::bitcoinExchange(std::string file)
         getline(infile, content, '\n');
         while (getline(infile, content, '\n'))
         {
-            date = content.substr(0, content.find(" | "));
-            value = content.substr(content.find(" | ") + 3);
-            if (validDate(date) && validValue(value))
+            //if (content.find_first_of("|") == std::string::npos)
+            if (content[10] != ' ' || content[11] != '|' || content[12] != ' ')
             {
-                it = data.find(previousDate(date, data));
-                std::cout << date << " => " << value << " = " << it->second * stof(value) << std::endl;
+                std::cout << "Error: bad input => " << content << std::endl;
             }
-            else if (validDate(date) == false)
-                std::cout << "Error: bat input => " << date << std::endl;
-            else if (validValue(value) == false)
+            else
             {
-                //std::cout << "Error: bat number => " << value << std::endl;
-                try
+                date = content.substr(0, content.find(" | "));
+                value = content.substr(content.find(" | ") + 3);
+                if (validDate(date) && validValue(value))
                 {
-                    num = stof(value);
-                    if (num < 0)
-                        std::cout << "Error: not a positive number." << std::endl;
-                    if (num > 1000)
-                        std::cout << "Error: too large a number." << std::endl;
+                    it = data.find(previousDate(date, data));
+                    std::cout << date << " => " << value << " = " << it->second * stof(value) << std::endl;
                 }
-                catch(const std::exception& e)
+                else if (validDate(date) == false)
+                    std::cout << "Error: bat input => " << date << std::endl;
+                else if (validValue(value) == false)
                 {
-                    //std::cerr << e.what() << '\n';
-                    std::cout << "Error: bat number." << std::endl;
+                    try
+                    {
+                        num = stof(value);
+                        if (num < 0)
+                            std::cout << "Error: not a positive number." << std::endl;
+                        else if (num > 1000)
+                            std::cout << "Error: too large a number." << std::endl;
+                        else
+                            std::cout << "Error: bat number." << std::endl;
+                    }
+                    catch(const std::exception& e)
+                    {
+                        //std::cerr << e.what() << '\n';
+                        std::cout << "Error: bat number." << std::endl;
+                    }
                 }
             }
         }
+        infile.close();
     }
     else
     {
         std::cerr << file << " could not be opened" << std::endl;
         exit (1);
     }
-
-    // values on map
-    /* for (it=data.begin(); it != data.end(); ++it)
-    {
-        std::cout << it->first << " -> " << it->second << std::endl;
-    } */
 }

@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 00:03:05 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/25 16:35:23 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:30:31 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,17 +89,12 @@ static void	vectorMergeSort(std::vector<int> &array)
 void	PmergeMe::vectorPmergeMe(int argc, char **argv)
 {
 	std::vector<int>	array;
-	clock_t time;
-	int 	nums = 0;
 	try
     {
 		for(int i = 1; i < argc; i++)
         {
-			if (atoi(argv[i]) > 0)
-			{
-				array.push_back(atoi(argv[i]));
-				nums++;
-			}
+			if (std::stoi(argv[i]) > 0)
+				array.push_back(std::stoi(argv[i]));
 			else
 				throw InvalidValueFoundException();
 		}
@@ -112,15 +107,10 @@ void	PmergeMe::vectorPmergeMe(int argc, char **argv)
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
 	std::cout << std::endl;
-	time = clock();
 	vectorMergeSort(array);
-	time = clock() - time;
 	std::cout << "After: ";
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
-	//std::cout << "\nTime to process a range of " << nums << " elements with std::vector: " 
-	//<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
-	//std::cout << "Vector time: " << time / (double)CLOCKS_PER_SEC *1e6 << " microseconds" << std::endl;
 	std::cout << std::endl;
 }
 
@@ -177,17 +167,12 @@ static void	dequeMergeSort(std::deque<int> &array)
 void	PmergeMe::dequePmergeMe(int argc, char **argv)
 {
 	std::deque<int>	array;
-	clock_t time;
-	int		nums = 0;
 	try
     {
 		for(int i = 1; i < argc; i++)
         {
-			if (atoi(argv[i]) > 0)
-			{
-				array.push_back(atoi(argv[i]));
-				nums++;
-			}
+			if (std::stoi(argv[i]) > 0)
+				array.push_back(std::stoi(argv[i]));
 			else
 				throw InvalidValueFoundException();
 		}
@@ -200,14 +185,9 @@ void	PmergeMe::dequePmergeMe(int argc, char **argv)
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
 	std::cout << std::endl;
-	time = clock();
 	dequeMergeSort(array);
-	time = clock() - time;
 	std::cout << "After: ";
 	for(size_t i = 0; i < array.size(); i++)
 		std::cout << array[i] << " ";
-	//std::cout << "\nTime to process a range of " << nums << " elements with std::deque: " 
-	//<<  time / (double)CLOCKS_PER_SEC *1e6 << " us" << std::endl;
-	//std::cout << "Queve time: " << time / (double)CLOCKS_PER_SEC *1e6 << " microseconds" << std::endl;
 	std::cout << std::endl;
 }

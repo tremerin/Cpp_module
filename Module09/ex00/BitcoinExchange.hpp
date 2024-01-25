@@ -6,7 +6,7 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 02:05:24 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/23 14:29:26 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:54:35 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fstream>
 # include <algorithm>
 # include <fcntl.h>
+# include <string>
 # include <map>
 
 class BitcoinExchange
@@ -30,7 +31,7 @@ private:
 
 public:
     static void bitcoinExchange(std::string file);
-    
+
 };
 
 

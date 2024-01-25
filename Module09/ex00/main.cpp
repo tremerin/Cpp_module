@@ -6,11 +6,18 @@
 /*   By: fgalan-r <fgalan-r@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 12:26:11 by fgalan-r          #+#    #+#             */
-/*   Updated: 2024/01/23 12:45:37 by fgalan-r         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:10:32 by fgalan-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "BitcoinExchange.hpp"
+
+/* void	ft_leaks(void)
+{
+	system("leaks -q 'btc'");
+} */
+
+// atexit(ft_leaks);
 
 int main(int argc, char **argv)
 {
